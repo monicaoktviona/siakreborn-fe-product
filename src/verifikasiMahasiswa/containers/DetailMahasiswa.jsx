@@ -23,7 +23,7 @@ useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, detailsMahasiswa: true}))
-			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({  })
+			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({ id })
 			setDetailDataMahasiswa(detailDataMahasiswa.data)
 		} finally {
 			setIsLoading(prev => ({...prev, detailsMahasiswa: false}))
