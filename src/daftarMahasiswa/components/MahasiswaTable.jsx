@@ -18,7 +18,7 @@ const MahasiswaTable = ({ mahasiswaDataList, angkatanSelectionField,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (mahasiswaItem) => {
-    isMobile() && navigate(`/daftarmahasiswa/detail/:id`
+    isMobile() && navigate(`/daftarmahasiswa/detail/${mahasiswaItem.id}`
     );
   };
   
@@ -27,6 +27,7 @@ const MahasiswaTable = ({ mahasiswaDataList, angkatanSelectionField,
     <Layouts.ListComponentTableLayout
   	  items={[mahasiswaDataList, angkatanSelectionField]}
   	  detail={detail}
+  	  isSearchable
   	  filterFields={[
   	    {
   	      label: "Angkatan",
@@ -77,7 +78,7 @@ const MahasiswaTable = ({ mahasiswaDataList, angkatanSelectionField,
           }
   ]}
         itemsEvents={(mahasiswaItem) => [
-          <Link to={`/daftarmahasiswa/detail/:id`}>
+          <Link to={`/daftarmahasiswa/detail/${mahasiswaItem.id}`}>
             <Button
           	size="sm"
           	variant=
