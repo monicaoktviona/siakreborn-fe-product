@@ -69,7 +69,38 @@ const ModifiedFormFormPostIndustri = ({
 		  ]}
 	
 		  formFields={[
-		  
+			  
+			  <Controller
+			    key="judul"
+		        name="judul"
+		        control={control}
+		        render={({ field, fieldState }) => (
+				  <InputField
+		            label="Judul"
+		            placeholder="Masukkan judul"
+		            fieldState={fieldState}
+					{...field}
+					isRequired={false}
+		          />
+		        )}
+		      />
+	,
+			  
+			  <Controller
+			    key="deskripsi"
+		        name="deskripsi"
+		        control={control}
+		        render={({ field, fieldState }) => (
+				  <RichTextField
+		            label="Deskripsi"
+		            placeholder="Masukkan deskripsi"
+		            fieldState={fieldState}
+					{...field}
+					isRequired={false}
+		          />
+		        )}
+		      />
+		  ,
 	
 		  ]}
 	
