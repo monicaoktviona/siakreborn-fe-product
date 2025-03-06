@@ -23,6 +23,27 @@ const DetailMahasiswa = ({ data }) => {
       item={data}
       itemsAttrs={[
         {
+          id: "nama",
+          condition: "",
+          label: "Nama",
+          featureName: "nama",
+        }
+        ,
+        {
+          id: "nPM",
+          condition: "",
+          label: "NPM",
+          featureName: "npm",
+        }
+        ,
+        {
+          id: "email",
+          condition: "",
+          label: "Email",
+          featureName: "email",
+        }
+        ,
+        {
           id: "statusAkademik",
           condition: "",
           label: "Status Akademik",

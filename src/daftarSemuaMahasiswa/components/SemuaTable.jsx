@@ -18,7 +18,7 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (semuaItem) => {
-    isMobile() && navigate(`/daftarsemuamahasiswa/detail/:id`
+    isMobile() && navigate(`/daftarsemuamahasiswa/detail/${semuaItem.id}`
     );
   };
   
@@ -27,6 +27,7 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField,
     <Layouts.ListComponentTableLayout
   	  items={[mahasiswaDataList, angkatanSelectionField]}
   	  detail={detail}
+  	  isSearchable
   	  filterFields={[
   	    {
   	      label: "Angkatan",
@@ -77,7 +78,7 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField,
           }
   ]}
         itemsEvents={(semuaItem) => [
-          <Link to={`/daftarsemuamahasiswa/detail/:id`}>
+          <Link to={`/daftarsemuamahasiswa/detail/${semuaItem.id}`}>
             <Button
           	size="sm"
           	variant=
