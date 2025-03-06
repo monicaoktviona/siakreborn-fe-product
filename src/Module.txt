@@ -1,0 +1,1222 @@
+ProgramStudi
+	tes1 Daftar Program Studi Page
+	tes1 Detail Program Studi Page
+	tes1 Ubah ProgramStudi Page
+	tes1 Tambah Program Studi Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Approval Subscription
+	tes1 Approval Subscription Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+IsiUbahIRS
+	tes1 IsiUbah IRS Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Daftar Alumni
+	tes1 Daftar Alumni Page
+	tes1 Detail Alumni Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+
+
+
+
+Kelas
+	tes1 Daftar Kelas Page
+	tes1 Detail Kelas Page
+	tes1 Ubah Kelas Page
+	tes1 Tambah Kelas Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Daftar Semua Mahasiswa
+	tes1 Daftar Semua Mahasiswa Page
+	tes1 Detail Mahasiswa Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+
+Semester
+	tes1 Daftar Semester Page
+	tes1 Ubah Semester Page
+	tes1 Tambah Semester Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+RingkasanAkademis
+	tes1 Ringkasan Akademis Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+
+
+
+
+Verifikasi Mahasiswa
+	tes1 Cari Mahasiswa
+	tes1 Detail Mahasiswa
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+CPMK
+	tes1 Daftar CPMK Page
+	tes1 Detail CPMK Page
+	tes1 Tambah CPMK Page
+	tes1 Ubah CPMK Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+MataKuliah
+	tes1 Tambah Mata Kuliah Page
+	tes1 Daftar Mata Kuliah Page
+	tes1 Detail Mata Kuliah Page
+	tes1 Ubah Mata Kuliah Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Pengumuman Alumni
+	tes1 Daftar Pengumuman Alumni Page
+	tes1 Post Pengumuman Alumni Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Kurikulum
+	tes1 Daftar Kurikulum Page
+	tes1 Detail Kurikulum Page
+	tes1 Ubah Kurikulum Page
+	tes1 Tambah Kurikulum Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Pengajuan Subscription
+	tes1 Pengajuan Subscription Page
+	tes1 Detail Pengajuan Subscription
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+LaporanCPL
+	tes1 Laporan CPL Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+
+Daftar Industri
+	tes1 Daftar Industri Page
+	tes1 Detail Industri Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+
+RiwayatAkademis
+	tes1 Daftar Riwayat Akademis Page
+	tes1 Detail Penilaian Mahasiswa Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+
+
+
+
+Daftar Mahasiswa
+	tes1 Daftar Mahasiswa Page
+	tes1 Detail Mahasiswa Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+
+Daftar Semua Alumni
+	tes1 Daftar Semua Alumni Page
+	tes1 Detail Alumni Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+
+Buat Akun Alumni
+	tes1 Buat Akun Alumni Page
+	tes1 Detail Akun Alumni Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Pembayaran
+	tes1 Form Pembayaran Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Profile Alumni
+	tes1 Profile Alumni Page
+	tes1 Update Profile Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+LihatIRS
+	tes1 Lihat IRS Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+
+
+
+
+Pengumuman Admin Akademik
+	tes1 Daftar Pengumuman Admin Akademik Page
+	tes1 Post Pengumuman Admin Akademik Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+CPL
+	tes1 Daftar CPL Page
+	tes1 Detail CPL Page
+	tes1 Tambah CPL Page
+	tes1 Ubah CPL Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+PengaturanPengisianIRS
+	tes1 Pengaturan Masa Pengisian IRS Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Profile Mahasiswa
+	tes1 Profile Mahasiswa Page
+	tes1 Update Profile Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+Profile Industri
+	tes1 Profile Industri Page
+	tes1 Update Profile Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+LaporanCPMK
+	tes1 Laporan CPMK Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+
+PenilaianKelas
+	tes1 Daftar Kelas Diajar Page
+	tes1 Detail Penilaian Kelas Page
+	tes1 Tambah Komponen Penilaian Page
+	tes1 Ubah Komponen Penilaian Page
+	tes1 Detail Nilai Mahasiswa Page
+	tes1 Tambah Nilai Mahasiswa Page
+	tes1 Tambah Pemetaan Capaian
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+SubCPMK
+	tes1 Daftar SubCPMK Page
+	tes1 Detail SubCPMK Page
+	tes1 Tambah SubCPMK Page
+	tes1 Ubah SubCPMK Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+Pengumuman Industri
+	tes1 Daftar Pengumuman Industri Page
+	tes1 Post Pengumuman Industri Page
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+
+Update Lulusan
+	tes1 List Mahasiswa
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
+
+Verifikasi Alumni
+	tes1 Cari Alumni
+	tes1 Detail Alumni
+
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+	
+/*
+	Generated on 12/02/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.14
+*/
+
+
+
+
