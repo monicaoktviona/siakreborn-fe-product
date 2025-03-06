@@ -18,7 +18,7 @@ const SemuaTable = ({ tahunLulusSelectionField, alumniDataList,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (semuaItem) => {
-    isMobile() && navigate(`/daftarsemuaalumni/detail/:id`
+    isMobile() && navigate(`/daftarsemuaalumni/detail/${semuaItem.id}`
     );
   };
   
@@ -27,11 +27,20 @@ const SemuaTable = ({ tahunLulusSelectionField, alumniDataList,
     <Layouts.ListComponentTableLayout
   	  items={[tahunLulusSelectionField, alumniDataList]}
   	  detail={detail}
+  	  isSearchable
+  	  filterFields={[
+  	    {
+  	      label: "Tahun Lulus",
+  	      featureName: "tahunLulus",
+  	      options: tahunLulusSelectionField,
+            editable: false,
+  	    }
+  	  ]}
   	  itemsAttrs={[
   ,
   ]}
         itemsEvents={(semuaItem) => [
-          <Link to={`/daftarsemuaalumni/detail/:id`}>
+          <Link to={`/daftarsemuaalumni/detail/${semuaItem.id}`}>
             <Button
           	size="sm"
           	variant=

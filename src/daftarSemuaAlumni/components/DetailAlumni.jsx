@@ -22,6 +22,61 @@ const DetailAlumni = ({ data }) => {
     <Layouts.DetailComponentLayout
       item={data}
       itemsAttrs={[
+        {
+          id: "nama",
+          condition: "",
+          label: "Nama",
+          featureName: "nama",
+        }
+        ,
+        {
+          id: "nPM",
+          condition: "",
+          label: "NPM",
+          featureName: "npm",
+        }
+        ,
+        {
+          id: "pekerjaan",
+          condition: "",
+          label: "Pekerjaan",
+          featureName: "pekerjaan",
+        }
+        ,
+        {
+          id: "tempatKerja",
+          condition: "",
+          label: "Tempat Kerja",
+          featureName: "tempatKerja",
+        }
+        ,
+        {
+          id: "tahunLulus",
+          condition: "",
+          label: "Tahun Lulus",
+          featureName: "tahunLulus",
+        }
+        ,
+        {
+          id: "email",
+          condition: "",
+          label: "Email",
+          featureName: "email",
+        }
+        ,
+        {
+          id: "linkPortofolio",
+          condition: "",
+          label: "Link Portofolio",
+          featureName: "portofolioUrl",
+        }
+        ,
+        {
+          id: "linkLinkedIn",
+          condition: "",
+          label: "Link LinkedIn",
+          featureName: "linkedinUrl",
+        }
         
       ]}
       itemsEvents={[

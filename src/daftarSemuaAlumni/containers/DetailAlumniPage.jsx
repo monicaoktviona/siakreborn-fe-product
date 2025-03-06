@@ -23,7 +23,7 @@ useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, detailAlumni: true}))
-			const { data: detailDataAlumni } = await getDetailDataAlumni({ id })
+			const { data: detailDataAlumni } = await getDetailDataAlumni({ id, id })
 			setDetailDataAlumni(detailDataAlumni.data)
 		} finally {
 			setIsLoading(prev => ({...prev, detailAlumni: false}))
