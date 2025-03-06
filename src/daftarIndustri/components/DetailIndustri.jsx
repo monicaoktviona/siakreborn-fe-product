@@ -23,6 +23,20 @@ const DetailIndustri = ({ data }) => {
       item={data}
       itemsAttrs={[
         {
+          id: "nama",
+          condition: "",
+          label: "Nama",
+          featureName: "nama",
+        }
+        ,
+        {
+          id: "email",
+          condition: "",
+          label: "Email",
+          featureName: "email",
+        }
+        ,
+        {
           id: "alamat",
           condition: "",
           label: "Alamat",

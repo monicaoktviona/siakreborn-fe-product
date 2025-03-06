@@ -18,7 +18,7 @@ const IndustriTable = ({ industriDataList, domainPerusahaanSelectionField,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (industriItem) => {
-    isMobile() && navigate(`/daftarindustri/detail/:id`
+    isMobile() && navigate(`/daftarindustri/detail/${industriItem.id}`
     );
   };
   
@@ -27,6 +27,7 @@ const IndustriTable = ({ industriDataList, domainPerusahaanSelectionField,
     <Layouts.ListComponentTableLayout
   	  items={[industriDataList, domainPerusahaanSelectionField]}
   	  detail={detail}
+  	  isSearchable
   	  filterFields={[
   	    {
   	      label: "Domain Bidang Perusahaan",
@@ -85,7 +86,7 @@ const IndustriTable = ({ industriDataList, domainPerusahaanSelectionField,
           }
   ]}
         itemsEvents={(industriItem) => [
-          <Link to={`/daftarindustri/detail/:id`}>
+          <Link to={`/daftarindustri/detail/${industriItem.id}`}>
             <Button
           	size="sm"
           	variant=
