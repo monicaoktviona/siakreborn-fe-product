@@ -20,6 +20,27 @@ const PengumumanCard = ({ listPengumumanAdminAkademikDataBinding,
       items={[listPengumumanAdminAkademikDataBinding]}
       itemsAttrs={[
         {
+          id: "judul",
+          condition: "",
+          label: "Judul",
+          featureName: "judul",
+        }
+  ,
+        {
+          id: "deskripsi",
+          condition: "",
+          label: "Deskripsi",
+          featureName: "deskripsi",
+        }
+  ,
+        {
+          id: "tanggalPublikasi",
+          condition: "",
+          label: "Tanggal Publikasi",
+          featureName: "tanggalPublikasi",
+        }
+  ,
+        {
           id: "pengunggah",
           condition: "",
           label: "Pengunggah",
