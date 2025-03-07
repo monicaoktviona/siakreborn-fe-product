@@ -14,7 +14,6 @@ import FormUbahKurikulum from '../components/FormUbahKurikulum'
 import getKurikulumData from '../services/getKurikulumData'
 import getProgramStudiSelectionField from '../services/getProgramStudiSelectionField'
 const UbahKurikulumPage = props => {
-const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahKurikulum: false,
