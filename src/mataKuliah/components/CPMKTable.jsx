@@ -20,7 +20,7 @@ const CPMKTable = ({ cPMKDataList,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (cPMKItem) => {
-    isMobile() && navigate();
+    isMobile() && navigate(`/cpmk/${cPMKItem.id}`);
   };
   
   const [showModalKonfirmasiHapusMataKuliah, setShowModalKonfirmasiHapusMataKuliah] = React.useState(false);
@@ -70,7 +70,7 @@ const CPMKTable = ({ cPMKDataList,
           }
   ]}
         itemsEvents={(cPMKItem) => [
-          <Link to=''>
+          <Link to={`/cpmk/${cPMKItem.id}`}>
             <Button
           	size="sm"
           	variant=

@@ -13,7 +13,7 @@ import { useAuth } from '@/commons/auth';
 import DetailMataKuliah from '../components/DetailMataKuliah'
 import getMataKuliahDataDetail from '../services/getMataKuliahDataDetail'
 import CPMKTable from "../components/CPMKTable";
-
+import isSelectedFeature from "@/commons/utils/isSelectedFeature";
 import getCPMKDataList from '../services/getCPMKDataList'
 const DetailMataKuliahPage = props => {
 const { checkPermission } = useAuth();
@@ -26,6 +26,7 @@ const { checkPermission } = useAuth();
 	const { setTitle } = useContext(HeaderContext);
 
 const [mataKuliahDataDetail, setMataKuliahDataDetail] = useState()
+const { id } = useParams();
 useEffect(() => {
 	const fetchData = async () => {
 		try {
@@ -45,7 +46,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, daftarCPMK: true}))
-				const { data: cPMKDataList } = await getCPMKDataList({ mataKuliahId })
+				const { data: cPMKDataList } = await getCPMKDataList({ mataKuliahId: id })
 				setCPMKDataList(cPMKDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, daftarCPMK: false}))
@@ -84,19 +85,20 @@ return (
 >
 	<DetailMataKuliah {...{ data : { ...mataKuliahDataDetail }}} />
 </Layouts.DetailContainerLayout>
-<Layouts.ListContainerTableLayout
-	title={"Daftar CPMK"}
-	singularName={"CPMK"}
-	items={[cPMKDataList]}
-	isLoading={isLoading.daftarCPMK}
->
-	<CPMKTable
-		
-		cPMKDataList={cPMKDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
-
+{isSelectedFeature("CPMK") && (
+	<Layouts.ListContainerTableLayout
+		title={"Daftar CPMK"}
+		singularName={"CPMK"}
+		items={[cPMKDataList]}
+		isLoading={isLoading.daftarCPMK}
+	>
+		<CPMKTable
+			
+			cPMKDataList={cPMKDataList}
+			
+		/>
+	</Layouts.ListContainerTableLayout>
+)}
 	</Layouts.ViewContainerLayout>
   )
 }
