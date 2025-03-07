@@ -46,9 +46,8 @@ const FormPembayaranSemester = ({
   const navigate = useNavigate()
   
   const bayar = (data) => {
-    const cleanData = cleanFormData(data)
     savePembayaranMe({
-      ...cleanData,
+      vendorName: "Oy",
     })
     .then(({ data: { data } }) => {
     })
@@ -68,7 +67,10 @@ const FormPembayaranSemester = ({
 		  ]}
 	
 		  formFields={[
-		  
+        <span>
+          Klik tombol <b>Bayar</b> untuk menyelesaikan pembayaran
+          semester Anda.
+        </span>,	  
 	
 		  ]}
 	
