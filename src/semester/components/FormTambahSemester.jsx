@@ -48,8 +48,10 @@ const FormTambahSemester = ({
   
   const tambah = (data) => {
     const cleanData = cleanFormData(data)
+    const kurikulumIds = cleanData.kurikulumIds.split(",");
     saveKurikulumSemesterSemester({
       ...cleanData,
+      kurikulumIds,
     })
     .then(({ data: { data } }) => {
       navigate(`/semester`)

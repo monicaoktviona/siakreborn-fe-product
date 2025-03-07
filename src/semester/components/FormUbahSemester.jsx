@@ -49,8 +49,10 @@ const FormUbahSemester = ({
   
   const simpan = (data) => {
     const cleanData = cleanFormData(data)
+    const kurikulumIds = cleanData.kurikulumIds.split(",");
     updateSemester({
       ...cleanData,
+      kurikulumIds
     })
     .then(({ data: { data } }) => {
      navigate(`/semester`)
