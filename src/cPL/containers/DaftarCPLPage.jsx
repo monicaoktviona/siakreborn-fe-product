@@ -51,6 +51,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerButtonLayout>
+			{checkPermission("CreateCPL") &&  (
 			  	<Link to={`/cpl/tambah
 			  	`}>
 			  		<Button className="p-2" variant="primary">
@@ -58,7 +59,7 @@ return (
 			  		</Button>
 			  	</Link>
 			  	
-			  	
+			)}
 			
 			  </Layouts.ViewContainerButtonLayout>
 			</>

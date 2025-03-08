@@ -14,7 +14,6 @@ import ModifiedFormUbahCPL from '../components/ModifiedFormUbahCPL'
 import getCPLUbah from '../services/getCPLUbah'
 import getKurikulum from '../services/getKurikulum'
 const UbahCPLPage = props => {
-const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahCPL: false,

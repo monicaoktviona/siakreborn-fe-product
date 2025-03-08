@@ -26,6 +26,7 @@ const { checkPermission } = useAuth();
 	const { setTitle } = useContext(HeaderContext);
 
 const [cPLDataDetail, setCPLDataDetail] = useState()
+const { id } = useParams();
 useEffect(() => {
 	const fetchData = async () => {
 		try {
@@ -45,7 +46,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, daftarCPMK: true}))
-				const { data: bobot } = await getBobot()
+				const { data: bobot } = await getBobot({ parentCPLId: id })
 				setBobot(bobot.data)
 			} finally {
 				setIsLoading(prev => ({...prev, daftarCPMK: false}))
@@ -63,8 +64,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`invalid
-			  	`}>
+			  	<Link to={`/cpl`}>
 			  		<Button className="p-4 w-full" variant="secondary">
 			  		  Kembali
 			  		</Button>
