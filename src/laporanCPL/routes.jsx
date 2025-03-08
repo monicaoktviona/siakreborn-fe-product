@@ -10,7 +10,7 @@ import LaporanCPLPage from './containers/LaporanCPLPage'
 const laporanCPLRoutes = [
 	{ 
 		path: "/cpl/laporan",
-		element: <LaporanCPLPage />,
+		element: <RequireAuth permissionNeeded="ReadLaporanCPL"><LaporanCPLPage /></RequireAuth>,
 	}
 ]
 
