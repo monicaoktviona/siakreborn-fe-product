@@ -11,7 +11,7 @@ import { Button, Modal } from '@/commons/components';
 
 import * as Layouts from "@/commons/layouts";
 
-const LaporanTable = ({ kelasSelectionField, laporanCPMKDataList,
+const LaporanTable = ({ kelasSelectionField, laporanCPMKDataList, cpmkList = []
 	}) => {
   const { checkPermission } = useAuth();
   
@@ -23,20 +23,12 @@ const LaporanTable = ({ kelasSelectionField, laporanCPMKDataList,
   	  filterFields={[
   	    {
   	      label: "Kelas",
-  	      featureName: "kelasSelectionField",
+  	      featureName: "kelasNama",
   	      options: kelasSelectionField,
             editable: false,
   	    }
   	  ]}
   	  itemsAttrs={[
-          {
-            id: "filterKelas",
-            condition: "isHeading",
-            label: "Filter Kelas",
-  		  featureName: "kelasSelectionField",
-            editable:  false 
-          }
-  ,
           {
             id: "nPM",
             condition: "isHeading",
@@ -60,7 +52,15 @@ const LaporanTable = ({ kelasSelectionField, laporanCPMKDataList,
   		  featureName: "kelasNama",
             editable:  false 
           }
-  ]}
+  ].concat(cpmkList.map(cpmk => {
+		return {
+			id: cpmk.id,
+			condition: "IsHeading",
+			label: cpmk.kode,
+			featureName: cpmk.id
+		}
+	  }))
+}
   	/>
   )
 };

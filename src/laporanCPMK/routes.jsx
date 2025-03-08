@@ -10,7 +10,7 @@ import LaporanCPMKPage from './containers/LaporanCPMKPage'
 const laporanCPMKRoutes = [
 	{ 
 		path: "/cpmk/laporan",
-		element: <LaporanCPMKPage />,
+		element: <RequireAuth permissionNeeded="ReadLaporanCPMK"><LaporanCPMKPage /></RequireAuth>
 	}
 ]
 

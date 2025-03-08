@@ -14,61 +14,159 @@ import LaporanTable from "../components/LaporanTable";
 
 import getKelasSelectionField from '../services/getKelasSelectionField'
 import getLaporanCPMKDataList from '../services/getLaporanCPMKDataList'
+
+import getAverageCPMKDataList from "../services/getAverageCPMKDataList";
+import getMataKuliahDataList from '../services/getMataKuliahDataList';
+import { BarChart } from '@/commons/Chart/BarChart';
+import SelectionFieldReport from '@/commons/components/Form/SelectionFieldReport';
 const LaporanCPMKPage = props => {
 const { checkPermission } = useAuth();
 
 	const [isLoading, setIsLoading] = useState({
 	dataLaporanCPMK: false,
-
+	mataKuliah: false,
+    kelas: false
 	});
 	const { setTitle } = useContext(HeaderContext);
+	const [isLoadingChart, setIsLoadingChart] = useState({
+		barChart: false,
+	  });
+	const [selectedValue, setSelectedValue] = useState()
 
 const [kelasSelectionField, setKelasSelectionField] = useState()
 const [laporanCPMKDataList, setLaporanCPMKDataList] = useState()
+const [listMataKuliah, setListMataKuliah] = useState([]);
+const [chartData, setChartData] = useState();
 	
 useEffect(() => {
-		const fetchData = async () => {
-			try {
-				setIsLoading(prev => ({...prev, dataLaporanCPMK: true}))
-				const { data: kelasSelectionField } = await getKelasSelectionField()
-				const { data: laporanCPMKDataList } = await getLaporanCPMKDataList()
-				setKelasSelectionField(kelasSelectionField.data)
-				setLaporanCPMKDataList(laporanCPMKDataList.data)
-			} finally {
-				setIsLoading(prev => ({...prev, dataLaporanCPMK: false}))
-			}
-		}
-		fetchData()	
-  	}, [])
+    const fetchDataMataKuliah = async () => {
+      try {
+        setIsLoading((prev) => ({ ...prev, mataKuliah: true }));
+        const { data: mataKuliahDataList } = await getMataKuliahDataList();
+        setListMataKuliah(mataKuliahDataList.data);
+      } finally {
+        setIsLoading((prev) => ({ ...prev, mataKuliah: false }));
+      }
+    };
+
+    checkPermission("ReadLaporanCPMK") && fetchDataMataKuliah();
+}, []);
+
+useEffect(() => {
+    const fetchDataKelas = async () => {
+      try {
+        setIsLoading((prev) => ({ ...prev, kelas: true }));
+        const { data: kelasSelectionField } = await getKelasSelectionField({
+          mataKuliahId: selectedValue,
+        });
+        setKelasSelectionField(kelasSelectionField.data);
+      } finally {
+        setIsLoading((prev) => ({ ...prev, kelas: false }));
+      }
+    };
+    checkPermission("ReadLaporanCPMK") && selectedValue && fetchDataKelas();
+}, [selectedValue]);
+
+useEffect(() => {
+    const fetchDataLaporanCPMK = async () => {
+      try {
+        setIsLoading((prev) => ({ ...prev, tableLaporanCPMK: true }));
+        const { data: laporanCPMKDataList } = await getLaporanCPMKDataList({
+          mataKuliahId: selectedValue,
+        });
+        setLaporanCPMKDataList(laporanCPMKDataList.data);
+		console.log(laporanCPMKDataList.data)
+      } finally {
+        setIsLoading((prev) => ({ ...prev, tableLaporanCPMK: false }));
+      }
+    };
+    checkPermission("ReadLaporanCPMK") &&
+      selectedValue &&
+      fetchDataLaporanCPMK();
+}, [selectedValue]);
+
+useEffect(() => {
+    const fetchChartData = async () => {
+      try {
+        setIsLoadingChart((prev) => ({ ...prev, barChart: true }));
+        const { data: chartData } = await getAverageCPMKDataList({
+          mataKuliahId: selectedValue,
+        });
+        setChartData(chartData.data);
+      } finally {
+        setIsLoadingChart((prev) => ({ ...prev, barChart: false }));
+      }
+    };
+    checkPermission("ReadLaporanCPMK") && selectedValue && fetchChartData();
+}, [selectedValue]);
 
 	
 	useEffect(() => {
 		setTitle("Laporan CPMK Page")
 	}, []);
-return (
-	<Layouts.ViewContainerLayout
-		buttons={
-			<>
-			<></>
-			</>
-		}
-	>
-<Layouts.ListContainerTableLayout
-	title={"Data Laporan CPMK"}
-	singularName={"Laporan"}
-	items={[kelasSelectionField, laporanCPMKDataList]}
-	isLoading={isLoading.dataLaporanCPMK}
->
-	<LaporanTable
-		
-		kelasSelectionField={kelasSelectionField}
-		laporanCPMKDataList={laporanCPMKDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
 
-	</Layouts.ViewContainerLayout>
-  )
+  return (
+    <Layouts.ViewContainerLayout
+      buttons={
+        <>
+          <></>
+        </>
+      }
+    >
+      <div className="flex w-fit place-self-end">
+        <SelectionFieldReport
+          label="Pilihan Mata Kuliah"
+          options={listMataKuliah}
+          placeholder="Masukkan pilihan mata kuliah"
+          isRequired={true}
+          selectedValue={selectedValue}
+          setSelectedValue={setSelectedValue}
+        />
+      </div>
+      {isLoadingChart.barChart ? (
+        <div className="flex justify-center items-center h-full">
+          <Spinner />
+        </div>
+      ) : (
+        <>
+          {chartData && chartData.data.length > 0 && (
+            <BarChart
+              title={"Laporan CPMK"}
+              xLabel={"CPMK"}
+              yLabel={"Rata-rata Nilai CPMK"}
+              data={chartData?.data ?? []}
+              labels={chartData?.labels ?? []}
+            />
+          )}
+        </>
+      )}
+      {isLoading.tableLaporanCPMK || isLoading.kelas ? (
+        <div className="flex justify-center items-center h-full">
+          <Spinner />
+        </div>
+      ) : (
+        <>
+          {laporanCPMKDataList && laporanCPMKDataList.mahasiswaList.length > 1 && (
+            <Layouts.ListContainerTableLayout
+              title={"Data Laporan CPMK"}
+              singularName={"Laporan"}
+              items={[
+                laporanCPMKDataList?.mahasiswaList ?? [],
+                kelasSelectionField,
+              ]}
+              isLoading={isLoading.tableLaporanCPMK}
+            >
+              <LaporanTable
+                laporanCPMKDataList={laporanCPMKDataList?.mahasiswaList ?? []}
+                kelasSelectionField={kelasSelectionField}
+                cpmkList={laporanCPMKDataList?.cpmkList ?? []}
+              />
+            </Layouts.ListContainerTableLayout>
+          )}
+        </>
+      )}
+    </Layouts.ViewContainerLayout>
+  );
 }
 export default LaporanCPMKPage
 
