@@ -18,7 +18,7 @@ const CPMKTable = ({ cPMKDataList, cPLSelectionField, mataKuliahSelectionField,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (cPMKItem) => {
-    isMobile() && navigate(`/cpmk/:id`
+    isMobile() && navigate(`/cpmk/${cPMKItem.id}`
     );
   };
   
@@ -31,60 +31,56 @@ const CPMKTable = ({ cPMKDataList, cPLSelectionField, mataKuliahSelectionField,
   	  filterFields={[
   	    {
   	      label: "CPL",
-  	      featureName: "cplName",
+  	      featureName: "parentCPLKode",
   	      options: cPLSelectionField,
             editable: false,
   	    }
   , 	    {
   	      label: "Mata Kuliah",
-  	      featureName: "mataKuliahName",
+  	      featureName: "mataKuliahNama",
   	      options: mataKuliahSelectionField,
             editable: false,
   	    }
   	  ]}
   	  itemsAttrs={[
-          {
-            id: "bobot",
-            condition: "isHeading",
-            label: "Bobot",
-  		  featureName: "bobot",
-            editable:  false 
-          }
-  ,
-          {
-            id: "cPL",
-            condition: "isHeading",
-            label: "CPL",
-  		  featureName: "cplName",
-            editable:  false 
-          }
-  ,
-          {
-            id: "mataKuliah",
-            condition: "isHeading",
-            label: "Mata Kuliah",
-  		  featureName: "mataKuliahName",
-            editable:  false 
-          }
-  ,
-          {
-            id: "filterCPL",
-            condition: "isHeading",
-            label: "Filter CPL",
-  		  featureName: "cPLSelectionField",
-            editable:  false 
-          }
-  ,
-          {
-            id: "filterMataKuliah",
-            condition: "isHeading",
-            label: "Filter Mata Kuliah",
-  		  featureName: "mataKuliahSelectionField",
-            editable:  false 
-          }
+        {
+          id: "kode",
+          condition: "isHeading",
+          label: "Kode",
+          featureName: "kode",
+          editable:  false
+        },
+        {
+          id: "deskripsi",
+          condition: "isHeading",
+          label: "Deskripsi",
+          featureName: "deskripsi",
+          editable:  false
+        },
+        {
+          id: "bobot",
+          condition: "isHeading",
+          label: "Bobot",
+          featureName: "bobot",
+          editable:  false 
+        },
+        {
+          id: "cPL",
+          condition: "isHeading",
+          label: "CPL",
+          featureName: "parentCPLKode",
+          editable:  false 
+        },
+        {
+          id: "mataKuliah",
+          condition: "isHeading",
+          label: "Mata Kuliah",
+          featureName: "mataKuliahNama",
+          editable:  false 
+        },
   ]}
         itemsEvents={(cPMKItem) => [
-          <Link to={`/cpmk/:id`}>
+          <Link to={`/cpmk/${cPMKItem.id}`}>
             <Button
           	size="sm"
           	variant=

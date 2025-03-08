@@ -11,7 +11,7 @@ import { Button, Modal } from '@/commons/components';
 
 import * as Layouts from "@/commons/layouts";
 
-const LaporanTable = ({ laporanCPLDataList,
+const LaporanTable = ({ laporanCPLDataList, cplList = []
 	}) => {
   const { checkPermission } = useAuth();
   
@@ -36,7 +36,16 @@ const LaporanTable = ({ laporanCPLDataList,
   		  featureName: "nama",
             editable:  false 
           }
-  ]}
+  ].concat(
+    cplList.map((cpl) => {
+      return {
+        id: cpl.id,
+        condition: "IsHeading",
+        label: cpl.kode,
+        featureName: cpl.id,
+      };
+    }))
+}
   	/>
   )
 };

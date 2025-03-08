@@ -11,34 +11,38 @@ import DetailMataKuliahPage from './containers/DetailMataKuliahPage'
 import UbahMataKuliahPage from './containers/UbahMataKuliahPage'
 
 const mataKuliahRoutes = [
-{ 
-	path: "/matakuliah/tambah",
-	element: <TambahMataKuliahPage />,
-}
-
-	
-,
-{ 
-	path: "/matakuliah/ubah",
-	element: <UbahMataKuliahPage />,
-}
-
-	
-,
-{ 
-	path: "/matakuliah",
-	element: <DaftarMataKuliahPage />,
-}
-
-	
-,
-{ 
-	path: "/matakuliah/:id",
-	element: <DetailMataKuliahPage />,
-}
-
-	
-
-]
-
+	{
+	  path: "/matakuliah/tambah",
+	  element: (
+		<RequireAuth permissionNeeded="CreateMataKuliah">
+		  <TambahMataKuliahPage />
+		</RequireAuth>
+	  ),
+	},
+	{
+	  path: "/matakuliah/ubah",
+	  element: (
+		<RequireAuth permissionNeeded="UpdateMataKuliah">
+		  <UbahMataKuliahPage />
+		</RequireAuth>
+	  ),
+	},
+	{
+	  path: "/matakuliah",
+	  element: (
+		<RequireAuth permissionNeeded="ReadMataKuliah">
+		  <DaftarMataKuliahPage />
+		</RequireAuth>
+	  ),
+	},
+	{
+	  path: "/matakuliah/:id",
+	  element: (
+		<RequireAuth permissionNeeded="ReadMataKuliah">
+		  <DetailMataKuliahPage />
+		</RequireAuth>
+	  ),
+	},
+];
+  
 export default mataKuliahRoutes

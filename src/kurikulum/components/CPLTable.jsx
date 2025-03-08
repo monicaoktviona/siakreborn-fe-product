@@ -20,7 +20,7 @@ const CPLTable = ({ cPLDataList,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (cPLItem) => {
-    isMobile() && navigate();
+    isMobile() && navigate(`/cpl/${cPLItem.id}`);
   };
   
   const [showModalKonfirmasiHapusKurikulum, setShowModalKonfirmasiHapusKurikulum] = React.useState(false);
@@ -54,7 +54,7 @@ const CPLTable = ({ cPLDataList,
           }
   ]}
         itemsEvents={(cPLItem) => [
-          <Link to=''>
+          <Link to={`/cpl/${cPLItem.id}`}>
             <Button
           	size="sm"
           	variant=

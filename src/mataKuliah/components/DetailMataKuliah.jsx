@@ -76,20 +76,22 @@ const DetailMataKuliah = ({ data }) => {
         
       ]}
       itemsEvents={[
+        checkPermission("DeleteMataKuliah") && (
             <Button
               variant="tertiary"
               onClick={() => setShowModalKonfirmasiHapusMataKuliah(true)}
             >
               Hapus
             </Button>
-        ,
+        ),
+        checkPermission("UpdateMataKuliah") && (
             <Button
           variant="secondary"
           onClick={() => ubahMataKuliah()}
         >
           Ubah Mata Kuliah
         </Button>
-        
+        )
       ]}
       itemsModals={[
         <Modal

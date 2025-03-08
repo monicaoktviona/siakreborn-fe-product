@@ -14,7 +14,6 @@ import FormUbahMataKuliah from '../components/FormUbahMataKuliah'
 import getMataKuliahUbah from '../services/getMataKuliahUbah'
 import getKurikulum from '../services/getKurikulum'
 const UbahMataKuliahPage = props => {
-const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahMataKuliah: false,

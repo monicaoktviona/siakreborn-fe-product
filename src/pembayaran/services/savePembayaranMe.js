@@ -9,7 +9,7 @@ const savePembayaranMe = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/pembayaranme/save`, body,
+	return axios.post(`${environment.rootApi}/call/pembayaran/me/save`, body,
 	{
 		params: { token },
 		

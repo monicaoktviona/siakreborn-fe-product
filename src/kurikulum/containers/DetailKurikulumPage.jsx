@@ -13,10 +13,10 @@ import { useAuth } from '@/commons/auth';
 import DetailKurikulum from '../components/DetailKurikulum'
 import getKurikulumDataDetail from '../services/getKurikulumDataDetail'
 import CPLTable from "../components/CPLTable";
-
+import isSelectedFeature from "@/commons/utils/isSelectedFeature";
 import getCPLDataList from '../services/getCPLDataList'
 const DetailKurikulumPage = props => {
-const { kurikulumId, id } = useParams()
+const { id } = useParams()
 	const { checkPermission } = useAuth();
 
 	const [isLoading, setIsLoading] = useState({
@@ -46,7 +46,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, daftarCPL: true}))
-				const { data: cPLDataList } = await getCPLDataList({ kurikulumId })
+				const { data: cPLDataList } = await getCPLDataList({ kurikulumId: id })
 				setCPLDataList(cPLDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, daftarCPL: false}))
@@ -85,18 +85,20 @@ return (
 >
 	<DetailKurikulum {...{ data : { ...kurikulumDataDetail }}} />
 </Layouts.DetailContainerLayout>
-<Layouts.ListContainerTableLayout
-	title={"Daftar CPL"}
-	singularName={"CPL"}
-	items={[cPLDataList]}
-	isLoading={isLoading.daftarCPL}
->
-	<CPLTable
-		
-		cPLDataList={cPLDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
+{isSelectedFeature("CPL") && (
+	<Layouts.ListContainerTableLayout
+		title={"Daftar CPL"}
+		singularName={"CPL"}
+		items={[cPLDataList]}
+		isLoading={isLoading.daftarCPL}
+	>
+		<CPLTable
+			
+			cPLDataList={cPLDataList}
+			
+		/>
+	</Layouts.ListContainerTableLayout>
+)}
 
 	</Layouts.ViewContainerLayout>
   )

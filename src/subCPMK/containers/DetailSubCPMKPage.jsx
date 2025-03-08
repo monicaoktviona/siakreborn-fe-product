@@ -16,7 +16,7 @@ const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	detailSubCPMK: false,
-
+	detailCapaian: false,
 	});
 	const { setTitle } = useContext(HeaderContext);
 

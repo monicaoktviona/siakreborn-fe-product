@@ -89,7 +89,7 @@ const SemesterTable = ({ semesterDataList,
           
   ,
           checkPermission("UpdateSemester") &&  (
-    <Link to={`/semester/ubah`}>
+    <Link to={`/semester/ubah?id=${semesterItem.id}`}>
       <Button
     	size="sm"
     	variant=

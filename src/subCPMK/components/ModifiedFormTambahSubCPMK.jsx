@@ -122,8 +122,8 @@ const ModifiedFormTambahSubCPMK = ({
 	
 		  
 		  <Controller
-		    key="idParentCPMK"
-	        name="idParentCPMK"
+		    key="parentCPMKId"
+	        name="parentCPMKId"
 	        control={control}
 	        render={({ field, fieldState }) => (
 					<SelectionField

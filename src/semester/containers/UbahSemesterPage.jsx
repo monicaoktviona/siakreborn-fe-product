@@ -14,8 +14,6 @@ import FormUbahSemester from '../components/FormUbahSemester'
 import getSemesterData from '../services/getSemesterData'
 import getKurikulum from '../services/getKurikulum'
 const UbahSemesterPage = props => {
-const { id } = useParams()
-
 	const [isLoading, setIsLoading] = useState({
 	ubahSemester: false,
 
@@ -31,10 +29,12 @@ useEffect(() => {
     const fetch = async () => {
 	  setIsLoading(prev => ({...prev, ubahSemester: true}))
 		const { data: semesterDataResponse } = await getSemesterData({ id  })
-		const { data: kurikulumResponse } = await getKurikulum({ id  })
+		const { data: kurikulumResponse } = await getKurikulum({ })
 
 	    setSemesterData(semesterDataResponse.data)
 	    setKurikulum(kurikulumResponse.data)
+
+		console.log(kurikulumResponse.data)
 
 
 	    setIsLoading(prev => ({...prev, ubahSemester: false}))

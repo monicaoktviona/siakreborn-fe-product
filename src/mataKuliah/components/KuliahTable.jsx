@@ -76,14 +76,6 @@ const KuliahTable = ({ mataKuliahDataList, kurikulumSelectionField,
   		  featureName: "kurikulumName",
             editable:  false 
           }
-  ,
-          {
-            id: "filterKurikulum",
-            condition: "isHeading",
-            label: "Filter Kurikulum",
-  		  featureName: "kurikulumSelectionField",
-            editable:  false 
-          }
   ]}
         itemsEvents={(kuliahItem) => [
           <Link to={`/matakuliah/${kuliahItem.id}`}>

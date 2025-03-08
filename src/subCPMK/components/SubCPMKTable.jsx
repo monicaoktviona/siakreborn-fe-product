@@ -30,12 +30,40 @@ const SubCPMKTable = ({ subCPMKDataList,
   	  isSearchable
   	  itemsAttrs={[
           {
+            id: "kode",
+            condition: "isHeading",
+            label: "Kode",
+            featureName: "kode",
+            editable:  false 
+          },
+          {
+            id: "deskripsi",
+            condition: "isHeading",
+            label: "Deskripsi",
+            featureName: "deskripsi",
+            editable:  false 
+          },
+          {
             id: "cPMK",
             condition: "isHeading",
             label: "CPMK",
-  		  featureName: "parentCPMKKode",
+            featureName: "parentCPMKKode",
             editable:  false 
-          }
+          },
+          {
+            id: "mataKuliah",
+            condition: "isHeading",
+            label: "Mata Kuliah",
+            featureName: "parentCPMKMataKuliahNama",
+            editable:  false 
+          },
+          {
+            id: "bobot",
+            condition: "isHeading",
+            label: "Bobot",
+            featureName: "bobot",
+            editable:  false 
+          },  
   ]}
         itemsEvents={(subCPMKItem) => [
           <Link to={`/subcpmk/${subCPMKItem.id}`}>

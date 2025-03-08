@@ -26,6 +26,7 @@ const { checkPermission } = useAuth();
 	const { setTitle } = useContext(HeaderContext);
 
 const [cPMKDataDetail, setCPMKDataDetail] = useState()
+const { id } = useParams();
 useEffect(() => {
 	const fetchData = async () => {
 		try {
@@ -45,7 +46,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, daftarSubCPMK: true}))
-				const { data: dataSubCPMK } = await getDataSubCPMK()
+				const { data: dataSubCPMK } = await getDataSubCPMK({ parentCPMKId: id })
 				setDataSubCPMK(dataSubCPMK.data)
 			} finally {
 				setIsLoading(prev => ({...prev, daftarSubCPMK: false}))

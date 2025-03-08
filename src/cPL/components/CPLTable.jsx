@@ -38,20 +38,29 @@ const CPLTable = ({ cPLDataList, kurikulumSelectionField,
   	  ]}
   	  itemsAttrs={[
           {
+            id: "kode",
+            condition: "isHeading",
+            label: "Kode",
+            featureName: "kode",
+            editable:  false
+          }
+        ,
+          {
+            id: "deskripsi",
+            condition: "isHeading",
+            label: "Deskripsi",
+            featureName: "deskripsi",
+            editable:  false
+          }
+        ,
+          {
             id: "kurikulum",
             condition: "isHeading",
             label: "Kurikulum",
-  		  featureName: "kurikulumName",
+  		      featureName: "kurikulumName",
             editable:  false 
           }
-  ,
-          {
-            id: "filterKurikulum",
-            condition: "isHeading",
-            label: "Filter Kurikulum",
-  		  featureName: "kurikulumSelectionField",
-            editable:  false 
-          }
+        ,
   ]}
         itemsEvents={(cPLItem) => [
           <Link to={`/cpl/${cPLItem.id}`}>

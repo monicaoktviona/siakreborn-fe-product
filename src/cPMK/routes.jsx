@@ -12,21 +12,24 @@ import UbahCPMKPage from './containers/UbahCPMKPage'
 
 const cPMKRoutes = [
 	{ 
-		path: "/cpmk",
-		element: <DaftarCPMKPage />,
-	},
-	{ 
-		path: "/cpmk/:id",
-		element: <DetailCPMKPage />,
-	},
-	{ 
 		path: "/cpmk/tambah",
-		element: <TambahCPMKPage />,
-	},
+		element: <RequireAuth permissionNeeded="CreateCPMK" ><TambahCPMKPage/></RequireAuth>
+	}	
+	,
 	{ 
 		path: "/cpmk/ubah",
-		element: <UbahCPMKPage />,
-	}
+		element: <RequireAuth permissionNeeded="UpdateCPMK" ><UbahCPMKPage/></RequireAuth>
+	}	
+	,
+	{ 
+		path: "/cpmk",
+		element: <RequireAuth permissionNeeded="ReadCPMK" ><DaftarCPMKPage/></RequireAuth>
+	}	
+	,
+	{ 
+		path: "/cpmk/:id",
+		element: <RequireAuth permissionNeeded="ReadCPMK" ><DetailCPMKPage/></RequireAuth>
+	}	
 ]
 
 export default cPMKRoutes

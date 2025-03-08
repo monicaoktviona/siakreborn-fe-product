@@ -20,7 +20,7 @@ const DetailSubCPMK = ({ data }) => {
     const [showModalKonfirmasiHapusSubCPMK, setShowModalKonfirmasiHapusSubCPMK] = React.useState(false); 
     const ubahSubCPMK = async () => {
       navigate(
-        '/subcpmk/ubah/:id?'
+        '/subcpmk/ubah?'
         + `id=${data.id}`
         
       );
@@ -30,6 +30,7 @@ const DetailSubCPMK = ({ data }) => {
   
     const hapus = async () => {
       await deleteSubCPMK({
+        id: data.id
       });
       navigate('/subcpmk');
     };
@@ -38,23 +39,61 @@ const DetailSubCPMK = ({ data }) => {
     <Layouts.DetailComponentLayout
       item={data}
       itemsAttrs={[
-        
+        {
+          id: "kode",
+          condition: "isHeading",
+          label: "Kode",
+          featureName: "kode",
+          editable:  false 
+        },
+        {
+          id: "deskripsi",
+          condition: "isHeading",
+          label: "Deskripsi",
+          featureName: "deskripsi",
+          editable:  false 
+        },
+        {
+          id: "cPMK",
+          condition: "isHeading",
+          label: "CPMK",
+          featureName: "parentCPMKKode",
+          editable:  false 
+        },
+        {
+          id: "mataKuliah",
+          condition: "isHeading",
+          label: "Mata Kuliah",
+          featureName: "parentCPMKMataKuliahNama",
+          editable:  false 
+        },
+        {
+          id: "bobot",
+          condition: "isHeading",
+          label: "Bobot",
+          featureName: "bobot",
+          editable:  false 
+        },          
       ]}
       itemsEvents={[
+        checkPermission("UpdateSubCPMK") && (
             <Button
               variant="secondary"
               onClick={() => ubahSubCPMK()}
             >
               Ubah SubCPMK
             </Button>
+        )
         ,
+        checkPermission("DeleteSubCPMK") && (
+
             <Button
           variant="tertiary"
           onClick={() => setShowModalKonfirmasiHapusSubCPMK(true)}
         >
           Hapus
         </Button>
-        
+        )
       ]}
       itemsModals={[
         <Modal
