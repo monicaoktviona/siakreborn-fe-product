@@ -15,7 +15,6 @@ import getCPMKUbah from '../services/getCPMKUbah'
 import getCPL from '../services/getCPL'
 import getMataKuliah from '../services/getMataKuliah'
 const UbahCPMKPage = props => {
-const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahCPMK: false,

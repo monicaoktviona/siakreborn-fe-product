@@ -17,6 +17,7 @@ import * as Layouts from "@/commons/layouts";
 const DetailCPMK = ({ data }) => {
     const { checkPermission } = useAuth();
     const navigate = useNavigate();
+    const [showModalKonfirmasiHapusCPMK, setShowModalKonfirmasiHapusCPMK] = React.useState(false);
     const ubahCPMK = async () => {
       navigate(
         '/cpmk/ubah?'
@@ -29,6 +30,7 @@ const DetailCPMK = ({ data }) => {
   
     const hapus = async () => {
       await deleteCPMK({
+        id: data.id,
       });
       navigate('/cpmk');
     };
@@ -60,23 +62,41 @@ const DetailCPMK = ({ data }) => {
         
       ]}
       itemsEvents={[
+        checkPermission("UpdateCPMK") && (
             <Button
               variant="secondary"
               onClick={() => ubahCPMK()}
             >
               Ubah CPMK
             </Button>
+        )
         ,
+        checkPermission("DeleteCPMK") && (
             <Button
           variant="tertiary"
-          onClick={() => hapusCPMK()}
+          onClick={() => setShowModalKonfirmasiHapusCPMK(true)}
         >
           Hapus
         </Button>
-        
+        )
       ]}
       itemsModals={[
-        
+        <Modal
+          isShow={showModalKonfirmasiHapusCPMK}
+          title={"Konfirmasi Hapus CPMK"}
+        >
+          <Link to="">
+            <Button
+              variant="tertiary"
+              onClick={() => setShowModalKonfirmasiHapusCPMK(false)}
+            >
+              Batal
+            </Button>
+          </Link>
+          <Button variant="danger" onClick={() => hapus()}>
+            Hapus
+          </Button>
+        </Modal>,        
       ]}
     />
   );

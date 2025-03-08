@@ -33,25 +33,44 @@ const SubCPMKTable = ({ dataSubCPMK,
             id: "kode",
             condition: "isHeading",
             label: "Kode",
-  		  featureName: "kode",
+  		      featureName: "kode",
             editable:  false 
-          }
-  ,
+          },
+          {
+            id: "nama",
+            condition: "isHeading",
+            label: "Nama",
+            featureName: "nama",
+            editable:  false 
+          },
           {
             id: "deskripsi",
             condition: "isHeading",
             label: "Deskripsi",
-  		  featureName: "deskripsi",
+  		      featureName: "deskripsi",
             editable:  false 
-          }
-  ,
+          },
           {
             id: "bobot",
             condition: "isHeading",
             label: "Bobot",
-  		  featureName: "bobot",
+  		      featureName: "bobot",
             editable:  false 
-          }
+          },
+          {
+            id: "cPL",
+            condition: "isHeading",
+            label: "CPL",
+            featureName: "parentCPMKCplName",
+            // editable:  false 
+          },
+          {
+            id: "mataKuliah",
+            condition: "isHeading",
+            label: "Mata Kuliah",
+            featureName: "parentCPMKMataKuliahNama",
+            // editable:  false 
+          },
   ]}
   	/>
   )
