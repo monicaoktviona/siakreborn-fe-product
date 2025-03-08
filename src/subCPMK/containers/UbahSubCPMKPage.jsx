@@ -14,7 +14,6 @@ import ModifiedFormUbahSubCPMK from '../components/ModifiedFormUbahSubCPMK'
 import getSubCPMKUbah from '../services/getSubCPMKUbah'
 import getCPMK from '../services/getCPMK'
 const UbahSubCPMKPage = props => {
-const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahSubCPMK: false,

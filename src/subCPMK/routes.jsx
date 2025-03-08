@@ -12,20 +12,20 @@ import UbahSubCPMKPage from './containers/UbahSubCPMKPage'
 
 const subCPMKRoutes = [
 	{ 
+		path: "/subcpmk/tambah",
+		element: <RequireAuth permissionNeeded="CreateSubCPMK" ><TambahSubCPMKPage/></RequireAuth>
+	},
+	{ 
 		path: "/subcpmk",
-		element: <DaftarSubCPMKPage />,
+		element: <RequireAuth permissionNeeded="ReadSubCPMK" ><DaftarSubCPMKPage/></RequireAuth>
+	},
+	{ 
+		path: "/subcpmk/ubah",
+		element: <RequireAuth permissionNeeded="UpdateSubCPMK" ><UbahSubCPMKPage/></RequireAuth>
 	},
 	{ 
 		path: "/subcpmk/:id",
-		element: <DetailSubCPMKPage />,
-	},
-	{ 
-		path: "/subcpmk/tambah",
-		element: <TambahSubCPMKPage />,
-	},
-	{ 
-		path: "/subcpmk/ubah/:id",
-		element: <UbahSubCPMKPage />,
+		element: <RequireAuth permissionNeeded="ReadSubCPMK" ><DetailSubCPMKPage /></RequireAuth>
 	}
 ]
 
