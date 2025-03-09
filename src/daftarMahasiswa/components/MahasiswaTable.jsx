@@ -37,45 +37,34 @@ const MahasiswaTable = ({ mahasiswaDataList, angkatanSelectionField,
   	    }
   	  ]}
   	  itemsAttrs={[
-          {
-            id: "tahunLulus",
-            condition: "isHeading",
-            label: "Tahun Lulus",
-  		  featureName: "invalid",
-            editable:  false 
-          }
-  ,
-          {
-            id: "tahunAngkatan",
-            condition: "isHeading",
-            label: "Tahun Angkatan",
-  		  featureName: "tahunAngkatan",
-            editable:  false 
-          }
-  ,
-          {
-            id: "statusAkademik",
-            condition: "isHeading",
-            label: "Status Akademik",
-  		  featureName: "statusAkademik",
-            editable:  false 
-          }
-  ,
-          {
-            id: "filterAngkatan",
-            condition: "isHeading",
-            label: "Filter Angkatan",
-  		  featureName: "angkatanSelectionField",
-            editable:  false 
-          }
-  ,
-          {
-            id: "filterTahunLulus",
-            condition: "isHeading",
-            label: "Filter Tahun Lulus",
-  		  featureName: "",
-            editable:  false 
-          }
+        {
+          id: "nama",
+          condition: "isHeading",
+          label: "Nama",
+          featureName: "nama",
+          editable:  false
+        },
+        {
+          id: "nPM",
+          condition: "isHeading",
+          label: "NPM",
+          featureName: "npm",
+          editable:  false
+        },
+        {
+          id: "tahunAngkatan",
+          condition: "isHeading",
+          label: "Tahun Angkatan",
+          featureName: "tahunAngkatan",
+          editable:  false 
+        },
+        {
+          id: "statusAkademik",
+          condition: "isHeading",
+          label: "Status Akademik",
+          featureName: "statusAkademik",
+          editable:  false 
+        }
   ]}
         itemsEvents={(mahasiswaItem) => [
           <Link to={`/daftarmahasiswa/detail/${mahasiswaItem.id}`}>

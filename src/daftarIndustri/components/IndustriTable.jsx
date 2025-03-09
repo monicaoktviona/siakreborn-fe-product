@@ -38,52 +38,26 @@ const IndustriTable = ({ industriDataList, domainPerusahaanSelectionField,
   	  ]}
   	  itemsAttrs={[
           {
-            id: "nPM",
+            id: "nama",
             condition: "isHeading",
-            label: "NPM",
-  		  featureName: "invalid",
+            label: "Nama",
+            featureName: "nama",
             editable:  false 
-          }
-  ,
-          {
-            id: "tahunLulus",
-            condition: "isHeading",
-            label: "Tahun Lulus",
-  		  featureName: "invalid",
-            editable:  false 
-          }
-  ,
+          },
           {
             id: "domainBidangPerusahaan",
             condition: "isHeading",
             label: "Domain Bidang Perusahaan",
-  		  featureName: "domain",
+  		      featureName: "domain",
             editable:  false 
-          }
-  ,
+          },
           {
             id: "jumlahKaryawan",
             condition: "isHeading",
             label: "Jumlah Karyawan",
-  		  featureName: "jumlahKaryawan",
+  		      featureName: "jumlahKaryawan",
             editable:  false 
-          }
-  ,
-          {
-            id: "filterTahunLulus",
-            condition: "isHeading",
-            label: "Filter Tahun Lulus",
-  		  featureName: "",
-            editable:  false 
-          }
-  ,
-          {
-            id: "filterDomainBidangPerusahaan",
-            condition: "isHeading",
-            label: "Filter Domain Bidang Perusahaan",
-  		  featureName: "domainPerusahaanSelectionField",
-            editable:  false 
-          }
+          },
   ]}
         itemsEvents={(industriItem) => [
           <Link to={`/daftarindustri/detail/${industriItem.id}`}>
