@@ -19,20 +19,14 @@ const DetailKelas = ({ data }) => {
     const navigate = useNavigate();
     const [showModalKonfirmasiHapusKelas, setShowModalKonfirmasiHapusKelas] = React.useState(false); 
     const ubahKelas = async () => {
-      navigate(
-        '/kelas/ubah?'
-        + `kelasId=${data.kelasId}`
-        
-      );
+      navigate("/kelas/ubah?" + `id=${data.id}`);
     };
-    
-    
   
     const hapus = async () => {
       await deleteKelas({
-        id: data.kelasId,
+        id: data.id,
       });
-      navigate('/kelas');
+      navigate("/kelas");
     };
   
   return (

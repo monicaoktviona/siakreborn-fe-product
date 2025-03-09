@@ -19,13 +19,14 @@ const { kelasId } = useParams()
 
 	});
 	const { setTitle } = useContext(HeaderContext);
+	const { id } = useParams();
 
 const [kelasDataDetail, setKelasDataDetail] = useState()
 useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, detailKelas: true}))
-			const { data: kelasDataDetail } = await getKelasDataDetail({ kelasId })
+			const { data: kelasDataDetail } = await getKelasDataDetail({ kelasId:id })
 			setKelasDataDetail(kelasDataDetail.data)
 		} finally {
 			setIsLoading(prev => ({...prev, detailKelas: false}))
