@@ -3,58 +3,59 @@ import CheckBoxField from "./CheckBoxField";
 import { capitalize } from "@/commons/utils/capitalize";
 
 const MultiSelectionField = forwardRef((props, ref) => {
-  const { label, variant, options, defaultValue } = props;
+  const { label, variant, options = [], defaultValue } = props; // Pastikan options memiliki default []
   let propsChild = { ...props };
   propsChild["label"] = "";
   delete propsChild.options;
-  const [value, setValue] = useState();
+
+  const [value, setValue] = useState([]);
 
   useEffect(() => {
     let tempDefaultValue = [];
 
-    if (!defaultValue) {
-      tempDefaultValue = options.map((item) => {
-        return false;
-      });
-    } else {
-      tempDefaultValue = defaultValue.split(",");
-      let tempAllChecked = options.map((item) => {
-        for (let i = 0; i < tempDefaultValue.length; i++) {
-          if (item.id === tempDefaultValue[i]) {
-            return true;
-          }
-        }
-        return false;
-      });
-      tempDefaultValue = tempAllChecked;
+    if (!Array.isArray(options)) {
+      console.error("Error: options is not an array", options);
+      return;
     }
+
+    if (!defaultValue) {
+      tempDefaultValue = options.map(() => false);
+    } else if (typeof defaultValue === "string") {
+      const selectedValues = defaultValue.split(",");
+      tempDefaultValue = options.map((item) => selectedValues.includes(item.id));
+    } else if (Array.isArray(defaultValue)) {
+      tempDefaultValue = options.map((item) => defaultValue.includes(item.id));
+    } else {
+      tempDefaultValue = options.map(() => false);
+    }
+
     setValue(tempDefaultValue);
-  }, []);
+  }, [defaultValue, options]);
 
   useEffect(() => {
-    if (value) {
-      let valueMultiSelectionField = [];
-      for (let i = 0; i < options.length; i++) {
-        if (value[i]) {
-          valueMultiSelectionField.push(options[i].id);
-        }
-      }
-      valueMultiSelectionField = valueMultiSelectionField.join(",");
-      props.onChange(valueMultiSelectionField);
+    if (value.length > 0) {
+      const selectedOptions = options
+        .filter((_, index) => value[index])
+        .map((option) => option.id)
+        .join(",");
+      
+      props.onChange(selectedOptions);
     }
-  }, [value]);
+  }, [value, options, props]);
 
   const handleChange = (index, updatedCheck) => {
-    let valueTemp = [...value];
-    valueTemp[index] = updatedCheck;
-    setValue(valueTemp);
+    setValue((prev) => {
+      const newValue = [...prev];
+      newValue[index] = updatedCheck;
+      return newValue;
+    });
   };
 
   return (
     <div className="form-control break-inside-avoid" {...variant}>
       {label && <label className="label font-bold uppercase">{label}</label>}
-      {options &&
-        value !== undefined &&
+      {Array.isArray(options) && options.length > 0 ? (
+        value.length === options.length &&
         options.map((option, index) => (
           <CheckBoxField
             ref={ref}
@@ -67,7 +68,10 @@ const MultiSelectionField = forwardRef((props, ref) => {
             name={label.replace(" ", "")}
             onChange={() => handleChange(index, !value[index])}
           />
-        ))}
+        ))
+      ) : (
+        <p className="text-red-500">No options available</p> // Pesan jika options kosong
+      )}
     </div>
   );
 });
