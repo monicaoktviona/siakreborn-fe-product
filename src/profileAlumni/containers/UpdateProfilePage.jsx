@@ -14,7 +14,6 @@ import FormFormProfileUpdateAlumni from '../components/FormFormProfileUpdateAlum
 import getDataAlumniUpdate from '../services/getDataAlumniUpdate'
 import getMakePublic from '../services/getMakePublic'
 const UpdateProfilePage = props => {
-const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	formProfileUpdateAlumni: false,
