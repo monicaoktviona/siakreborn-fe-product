@@ -38,42 +38,52 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField,
   	  ]}
   	  itemsAttrs={[
           {
+            id: "nama",
+            condition: "isHeading",
+            label: "Nama",
+            featureName: "nama",
+            editable:  false 
+          },
+          {
+            id: "nPM",
+            condition: "isHeading",
+            label: "NPM",
+            featureName: "npm",
+            editable:  false 
+          },
+          {
             id: "tahunLulus",
             condition: "isHeading",
             label: "Tahun Lulus",
-  		  featureName: "invalid",
+  		      featureName: "invalid",
             editable:  false 
-          }
-  ,
+          },
           {
             id: "tahunAngkatan",
             condition: "isHeading",
             label: "Tahun Angkatan",
-  		  featureName: "tahunAngkatan",
+  		      featureName: "tahunAngkatan",
             editable:  false 
-          }
-  ,
+          },
           {
             id: "statusAkademik",
             condition: "isHeading",
             label: "Status Akademik",
-  		  featureName: "statusAkademik",
+  		      featureName: "statusAkademik",
             editable:  false 
-          }
-  ,
+          },
           {
             id: "filterTahunLulus",
             condition: "isHeading",
             label: "Filter Tahun Lulus",
-  		  featureName: "",
+  		      featureName: "",
             editable:  false 
-          }
-  ,
+          },
           {
             id: "filterAngkatan",
             condition: "isHeading",
             label: "Filter Angkatan",
-  		  featureName: "angkatanSelectionField",
+  		      featureName: "angkatanSelectionField",
             editable:  false 
           }
   ]}

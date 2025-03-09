@@ -37,7 +37,29 @@ const SemuaTable = ({ tahunLulusSelectionField, alumniDataList,
   	    }
   	  ]}
   	  itemsAttrs={[
-  ,
+        {
+          id: "nama",
+          condition: "isHeading",
+          label: "Nama",
+          featureName: "nama",
+          editable:  false
+    }
+,
+    {
+          id: "nPM",
+          condition: "isHeading",
+          label: "NPM",
+          featureName: "npm",
+          editable:  false
+    }
+,
+    {
+          id: "tahunLulus",
+          condition: "isHeading",
+          label: "Tahun Lulus",
+          featureName: "tahunLulus",
+          editable:  false
+    }
   ]}
         itemsEvents={(semuaItem) => [
           <Link to={`/daftarsemuaalumni/detail/${semuaItem.id}`}>

@@ -60,14 +60,6 @@ const AlumniTable = ({ alumniDataList, tahunLulusSelectionField,
   		  featureName: "tahunLulus",
             editable:  false 
           }
-  ,
-          {
-            id: "filterTahunLulus",
-            condition: "isHeading",
-            label: "Filter Tahun Lulus",
-  		  featureName: "tahunLulusSelectionField",
-            editable:  false 
-          }
   ]}
         itemsEvents={(alumniItem) => [
           <Link to={`/daftaralumni/detail/${alumniItem.id}`}>
