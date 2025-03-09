@@ -31,7 +31,7 @@ useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, detailPenilaianMahasiswa: true}))
-			const { data: penilaianDataDetail } = await getPenilaianDataDetail({ id })
+			const { data: penilaianDataDetail } = await getPenilaianDataDetail({ kelasId: id })
 			setPenilaianDataDetail(penilaianDataDetail.data)
 		} finally {
 			setIsLoading(prev => ({...prev, detailPenilaianMahasiswa: false}))
@@ -46,7 +46,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, tableDetailNilai: true}))
-				const { data: penilaianMahasiswaDataList } = await getPenilaianMahasiswaDataList({ kelasId })
+				const { data: penilaianMahasiswaDataList } = await getPenilaianMahasiswaDataList({ kelasId: id })
 				setPenilaianMahasiswaDataList(penilaianMahasiswaDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, tableDetailNilai: false}))
@@ -76,27 +76,27 @@ return (
 			</>
 		}
 	>
-<Layouts.DetailContainerLayout
-	title={"Detail Penilaian Mahasiswa"}
-	singularName={"Penilaian"}
-	items={{...penilaianDataDetail}}
-	isLoading={isLoading.detailPenilaianMahasiswa}
-	isCorrelatedWithAnotherComponent={false}
->
-	<DetailPenilaianMahasiswa {...{ data : { ...penilaianDataDetail }}} />
-</Layouts.DetailContainerLayout>
-<Layouts.ListContainerTableLayout
-	title={"Table Detail Nilai"}
-	singularName={"Detail"}
-	items={[penilaianMahasiswaDataList]}
-	isLoading={isLoading.tableDetailNilai}
->
-	<DetailTable
-		
-		penilaianMahasiswaDataList={penilaianMahasiswaDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
+<div className="flex flex-col">
+        <Layouts.DetailContainerLayout
+          title={`${penilaianDataDetail?.mahasiswaNpm} - ${penilaianDataDetail?.mahasiswaNama}`}
+          singularName={"Penilaian"}
+          items={{ ...penilaianDataDetail }}
+          isLoading={isLoading.detailPenilaianMahasiswa}
+          isCorrelatedWithAnotherComponent={false}
+        >
+          <DetailPenilaianMahasiswa {...{ data: { ...penilaianDataDetail } }} />
+        </Layouts.DetailContainerLayout>
+      </div>
+      <Layouts.ListContainerTableLayout
+        title={"Detail Nilai"}
+        singularName={"Penilaian"}
+        items={[penilaianMahasiswaDataList]}
+        isLoading={isLoading.tablePenilaianMahasiswa}
+      >
+        <PenilaianTable
+          penilaianMahasiswaDataList={penilaianMahasiswaDataList}
+        />
+      </Layouts.ListContainerTableLayout>
 
 	</Layouts.ViewContainerLayout>
   )
