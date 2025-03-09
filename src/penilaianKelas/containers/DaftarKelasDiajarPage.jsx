@@ -21,7 +21,10 @@ const { checkPermission } = useAuth();
 
 	});
 	const { setTitle } = useContext(HeaderContext);
-
+	function formatAcademicYear(code) {
+		const [academicYear, term] = code.split(" - ");
+		return `Tahun Ajaran ${academicYear} Term ${term}`;
+	  }
 const [penilaianKelasDataList, setPenilaianKelasDataList] = useState()
 	
 useEffect(() => {
@@ -43,26 +46,29 @@ useEffect(() => {
 	}, []);
 return (
 	<Layouts.ViewContainerLayout
-		buttons={
-			<>
-			<></>
-			</>
-		}
-	>
-<Layouts.ListContainerTableLayout
-	title={"Table Kelas Diajar"}
-	singularName={"Kelas"}
-	items={[penilaianKelasDataList]}
-	isLoading={isLoading.tableKelasDiajar}
->
-	<KelasTable
-		
-		penilaianKelasDataList={penilaianKelasDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
-
-	</Layouts.ViewContainerLayout>
+      buttons={
+        <>
+          <></>
+        </>
+      }
+    >
+      {penilaianKelasDataList?.map((term, idx) => {
+        return (
+          <div key={idx} className="flex flex-col gap-4">
+            <Layouts.ListContainerTableLayout
+              title={
+                term.kode ? formatAcademicYear(term.kode) : "Undefined term"
+              }
+              singularName={"Kelas"}
+              items={[term.kelas]}
+              isLoading={isLoading.tableKelasDiajar}
+            >
+              <KelasTable penilaianKelasDataList={term.kelas} />
+            </Layouts.ListContainerTableLayout>
+          </div>
+        );
+      })}
+    </Layouts.ViewContainerLayout>
   )
 }
 export default DaftarKelasDiajarPage

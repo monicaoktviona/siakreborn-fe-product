@@ -14,7 +14,6 @@ import FormTambahPemetaanCapaian from '../components/FormTambahPemetaanCapaian'
 import getKomponenPenilaian from '../services/getKomponenPenilaian'
 import getCapaian from '../services/getCapaian'
 const TambahPemetaanCapaian = props => {
-const { kelasId } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	tambahPemetaanCapaian: false,
@@ -24,15 +23,18 @@ const { kelasId } = useParams()
 
 const [searchParams] = useSearchParams()
 const kelasId = searchParams.get('kelasId')
+const { id } = useParams();
+
 const [komponenPenilaian, setKomponenPenilaian] = useState()
 const [capaian, setCapaian] = useState()
 
 useEffect(() => {
     const fetch = async () => {
 	  setIsLoading(prev => ({...prev, tambahPemetaanCapaian: true}))
-		const { data: komponenPenilaianResponse } = await getKomponenPenilaian({ kelasId  })
-		const { data: capaianResponse } = await getCapaian({ kelasId  })
-
+	  const { data: komponenPenilaianResponse } = await getKomponenPenilaian({
+        kelasId: id,
+      });
+      const { data: capaianResponse } = await getCapaian({ kelasId: id });
 	    setKomponenPenilaian(komponenPenilaianResponse.data)
 	    setCapaian(capaianResponse.data)
 
@@ -51,12 +53,14 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/penilaian-kelas/:id
-			  	`}>
-			  		<Button className="p-4" variant="secondary">
-			  		  Kembali
-			  		</Button>
-			  	</Link>
+			<Link
+              to={`/penilaian-kelas/${id}
+			  	`}
+            >
+              <Button className="p-4" variant="secondary">
+                Kembali
+              </Button>
+            </Link>
 			  	
 			  	
 			  </Layouts.ViewContainerBackButtonLayout>

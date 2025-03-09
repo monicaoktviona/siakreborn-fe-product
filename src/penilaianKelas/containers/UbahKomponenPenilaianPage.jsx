@@ -13,23 +13,22 @@ import FormUbahKomponenPenilaian from '../components/FormUbahKomponenPenilaian'
 
 import getKomponenPenilaianUbah from '../services/getKomponenPenilaianUbah'
 const UbahKomponenPenilaianPage = props => {
-const { id, kelasId } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahKomponenPenilaian: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
+const { id, komponenId } = useParams();
 
 const [searchParams] = useSearchParams()
-const kelasId = searchParams.get('kelasId')
-const id = searchParams.get('id')
+
 const [komponenPenilaianUbah, setKomponenPenilaianUbah] = useState()
 
 useEffect(() => {
     const fetch = async () => {
 	  setIsLoading(prev => ({...prev, ubahKomponenPenilaian: true}))
-		const { data: komponenPenilaianUbahResponse } = await getKomponenPenilaianUbah({ kelasId  })
+		const { data: komponenPenilaianUbahResponse } = await getKomponenPenilaianUbah({ id: komponenId });
 
 	    setKomponenPenilaianUbah(komponenPenilaianUbahResponse.data)
 
@@ -48,12 +47,12 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/penilaian-kelas/:id
-			  	`}>
-			  		<Button className="p-4" variant="secondary">
-			  		  Kembali
-			  		</Button>
-			  	</Link>
+			<Link to={`/penilaian-kelas/${id}`}>
+              {" "}
+              <Button className="p-4" variant="secondary">
+                Kembali
+              </Button>
+            </Link>
 			  	
 			  	
 			  </Layouts.ViewContainerBackButtonLayout>

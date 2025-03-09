@@ -11,7 +11,6 @@ import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
 import FormTambahKomponenPenilaian from '../components/FormTambahKomponenPenilaian'
 const TambahKomponenPenilaianPage = props => {
-const { kelasId } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	tambahKomponenPenilaian: false,
@@ -20,7 +19,9 @@ const { kelasId } = useParams()
 	const { setTitle } = useContext(HeaderContext);
 
 const [searchParams] = useSearchParams()
-const kelasId = searchParams.get('kelasId')
+
+const { id } = useParams();
+
 
 useEffect(() => {
     const fetch = async () => {
@@ -41,7 +42,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/penilaian-kelas/:id
+			  	<Link to={`/penilaian-kelas/${id}
 			  	`}>
 			  		<Button className="p-4" variant="secondary">
 			  		  Kembali

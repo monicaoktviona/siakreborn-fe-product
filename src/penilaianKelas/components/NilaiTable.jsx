@@ -4,14 +4,15 @@
 	version 3.5.14
 */
 import React from 'react';
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from 'react-router';
 
 import { useAuth } from '@/commons/auth';
 import { Button, Modal } from '@/commons/components';
+import isSelectedFeature from '@/commons/utils/isSelectedFeature';
 
 import * as Layouts from "@/commons/layouts";
 
-const NilaiTable = ({ nilaiMahasiswaDataList,
+const NilaiTable = ({ nilaiMahasiswaDataList
 	}) => {
   const { checkPermission } = useAuth();
   
@@ -20,30 +21,27 @@ const NilaiTable = ({ nilaiMahasiswaDataList,
     <Layouts.ListComponentTableLayout
   	  items={[nilaiMahasiswaDataList]}
   	  itemsAttrs={[
-          {
+  		{
             id: "komponen",
             condition: "isHeading",
             label: "Komponen",
-  		  featureName: "komponenPenilaianNama",
-            editable:  false 
-          }
+            featureName: "komponenPenilaianNama",
+  		}
   ,
-          {
+  		{
             id: "bobot",
             condition: "isHeading",
             label: "Bobot",
-  		  featureName: "komponenPenilaianBobot",
-            editable:  false 
-          }
+            featureName: "komponenPenilaianBobot",
+  		}
   ,
-          {
+  		{
             id: "nilai",
             condition: "isHeading",
             label: "Nilai",
-  		  featureName: "nilai",
-            editable:  false 
-          }
-  ]}
+            featureName: "nilai",
+  		}
+  	  ]}
   	/>
   )
 };
