@@ -13,7 +13,7 @@ import FormTambahNilai from '../components/FormTambahNilai'
 
 import getKomponenPenilaianDataList from '../services/getKomponenPenilaianDataList'
 const TambahNilaiMahasiswaPage = props => {
-const { kelasId, mahasiswaId } = useParams()
+const { id, mahasiswaId } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	tambahNilai: false,
@@ -22,17 +22,20 @@ const { kelasId, mahasiswaId } = useParams()
 	const { setTitle } = useContext(HeaderContext);
 
 const [searchParams] = useSearchParams()
-const mahasiswaId = searchParams.get('mahasiswaId')
-const kelasId = searchParams.get('kelasId')
+
 const [komponenPenilaianDataList, setKomponenPenilaianDataList] = useState()
 
 useEffect(() => {
     const fetch = async () => {
 	  setIsLoading(prev => ({...prev, tambahNilai: true}))
-		const { data: komponenPenilaianDataListResponse } = await getKomponenPenilaianDataList({ mahasiswaId  })
+		const { data: komponenPenilaianDataListResponse } =  await getKomponenPenilaianDataList({ kelasId: id, mahasiswaId })
 
-	    setKomponenPenilaianDataList(komponenPenilaianDataListResponse.data)
-
+		setKomponenPenilaianDataList(
+			komponenPenilaianDataListResponse.data.map((v) => ({
+			  ...v,
+			  name: v.nama,
+			}))
+		  );
 
 	    setIsLoading(prev => ({...prev, tambahNilai: false}))
     }
@@ -48,7 +51,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/penilaian-kelas/:id/nilai/${mahasiswaId}
+			  	<Link to={`/penilaian-kelas/${id}/nilai/${mahasiswaId}
 			  	`}>
 			  		<Button className="p-4" variant="secondary">
 			  		  Kembali

@@ -30,6 +30,7 @@ const { checkPermission } = useAuth();
 	const { setTitle } = useContext(HeaderContext);
 
 const [detailMahasiswaDataList, setDetailMahasiswaDataList] = useState()
+const { id } = useParams();
 useEffect(() => {
 	const fetchData = async () => {
 		try {

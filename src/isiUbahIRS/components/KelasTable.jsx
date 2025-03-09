@@ -12,14 +12,14 @@ import { isMobile } from '@/commons/utils/responsive';
 
 import * as Layouts from "@/commons/layouts";
 
-const KelasTable = ({ kelasRencanaStudiDataList,
-
-	}) => {
+const KelasTable = ({ kelasRencanaStudiDataList, handleChange, selectedClasses }) => {
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
+
   const detail = async (kelasItem) => {
-    isMobile() && navigate();
+    isMobile() && navigate(`/kelas/${kelasItem.id}`);
   };
+
   
   
   return (
@@ -27,6 +27,12 @@ const KelasTable = ({ kelasRencanaStudiDataList,
   	  items={[kelasRencanaStudiDataList]}
   	  detail={detail}
   	  itemsAttrs={[
+        {
+          id: "radio",
+          condition: "isHeading",
+          label: "",
+          featureName: "mataKuliahId",
+        },
           {
             id: "namaKelas",
             condition: "isHeading",

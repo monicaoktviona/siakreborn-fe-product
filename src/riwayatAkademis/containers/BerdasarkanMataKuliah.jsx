@@ -34,8 +34,8 @@ useEffect(() => {
 				setIsLoading(prev => ({...prev, tableMKRiwayatAkademis: false}))
 			}
 		}
-		fetchData()	
-  	}, [])
+		checkPermission("ReadKelasMahasiswaMe") && fetchData();
+	}, [])
 
 	
 	useEffect(() => {

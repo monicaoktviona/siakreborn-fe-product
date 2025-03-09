@@ -9,7 +9,7 @@ const subscriptionApproveIndustri = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.put(`${environment.rootApi}/call/industri/subscriptionapprove`, body,
+	return axios.post(`${environment.rootApi}/call/industri/subscriptionapprove`, body,
 	{
 		params: { token },
 		
