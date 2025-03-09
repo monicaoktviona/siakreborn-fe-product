@@ -5,6 +5,7 @@
 */
 import React from 'react';
 import Home from "./containers/Home";
+import RequireAuth from '@/commons/auth/RequireAuth';
 
 const homeRoutes = [ 
 { 
