@@ -19,12 +19,20 @@ const ApprovalTable = ({ approvalSubscriptionListData,
   const { checkPermission } = useAuth();
   
   const [showModalKonfirmasiApprovalSubscription, setShowModalKonfirmasiApprovalSubscription] = React.useState(false);
-  const setujui = async  (approval) => {
-    await subscriptionApproveIndustri({
-        id: approval.id,
-    });
-    window.location.reload(false);
-      };
+  const [selectedApproval, setSelectedApproval] = React.useState(null); // Tambahkan state untuk menyimpan data baris
+  const setujui = async () => {
+    if (selectedApproval) {
+      await subscriptionApproveIndustri({
+        id: selectedApproval.id,
+      });
+      window.location.reload(false);
+    }
+  };
+
+  const handleApproveClick = (approvalItem) => {
+    setSelectedApproval(approvalItem); // Simpan data baris yang diklik
+    setShowModalKonfirmasiApprovalSubscription(true); // Tampilkan modal
+  };
   
   
   return (
@@ -70,7 +78,7 @@ const ApprovalTable = ({ approvalSubscriptionListData,
             	size="sm"
             	variant=
             				"secondary"
-                onClick={() => setShowModalKonfirmasiApprovalSubscription(true)}
+                onClick={() => handleApproveClick(approvalItem)}
               >
                 Setujui
               </Button>
@@ -87,7 +95,7 @@ const ApprovalTable = ({ approvalSubscriptionListData,
   	       <Link to=''><Button variant="tertiary" onClick={() => setShowModalKonfirmasiApprovalSubscription(false)}>Batal</Button></Link>
   	      <Button
   	        variant="secondary"
-  	        onClick={() => setujui(approvalItem)}
+  	        onClick={setujui}
   	      >
   	        Setujui
   	      </Button>
