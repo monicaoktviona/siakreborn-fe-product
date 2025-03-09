@@ -31,6 +31,11 @@ import { notifyError } from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
 
 const FormIsiIRS = ({ 
+  formTitle,
+  kelasRencanaStudiDataList,
+  selectedClasses,
+  handleChange,
+  isLoading,
  }) => {
   const { 
     control, 
@@ -47,11 +52,13 @@ const FormIsiIRS = ({
   
   const simpan = (data) => {
     const cleanData = cleanFormData(data)
-    saveRencanaStudiMe({
-      ...cleanData,
-    })
-    .then(({ data: { data } }) => {
-    })
+    const req = {
+      kelasIds: selectedClasses.map((item) => item.id),
+    };
+    saveRencanaStudi(req)
+      .then(({ data: { data } }) => {
+        navigate('/irs/ringkasan')
+      })
     .catch((error) => {
       console.error(error);
       notifyError(error);
@@ -67,10 +74,24 @@ const FormIsiIRS = ({
 	    vas={[
 		  ]}
 	
-		  formFields={[
-		  
-	
-		  ]}
+		  formFields={kelasRencanaStudiDataList?.map((mk, idx) => {
+        return (
+          <div key={idx} className="flex flex-col gap-4">
+            <Layouts.ListContainerTableLayout
+              title={mk.title}
+              singularName={"Kelas"}
+              items={[mk.kelas]}
+              isLoading={isLoading}
+            >
+              <KelasTable
+                handleChange={handleChange}
+                kelasRencanaStudiDataList={mk.kelas}
+                selectedClasses={selectedClasses}
+              />
+            </Layouts.ListContainerTableLayout>
+          </div>
+        );
+      })}
 	
 		  itemsEvents={[
 				<Button key="Simpan" type="submit" variant="primary">Simpan</Button>

@@ -26,13 +26,28 @@ const { checkPermission } = useAuth();
 
 
 const [kelasRencanaStudiDataList, setKelasRencanaStudiDataList] = useState()
-	
+const [selectedClasses, setSelectedClasses] = useState([]);
+  const [formTitle, setFormTitle] = useState();
+  const [isIRSPeriod, setIsIRSPeriod] = useState(true);
+  const [fallback, setFallback] = useState("");	
 useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, tableKelasRencanaStudi: true}))
 				const { data: kelasRencanaStudiDataList } = await getKelasRencanaStudiDataList({  })
 				setKelasRencanaStudiDataList(kelasRencanaStudiDataList.data)
+				setFormTitle(kelasRencanaStudiDataList.data.title);
+				setSelectedClasses(
+				  kelasRencanaStudiDataList.data.mataKuliah
+					.flatMap((mk) => mk.kelas)
+					.filter((k) => k.selected === true)
+				);
+			  } catch (error) {
+				console.log(error);
+				if (error.response.status === 403) {
+				  setIsIRSPeriod(false);
+				  setFallback(error.response.data.data.message);
+				}
 			} finally {
 				setIsLoading(prev => ({...prev, tableKelasRencanaStudi: false}))
 			}
