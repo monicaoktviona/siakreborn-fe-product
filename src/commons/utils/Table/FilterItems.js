@@ -5,9 +5,7 @@ const filterItems = (items, filterTextList) => {
           filterTextList?.every(
             (filterText) =>
               item[filterText.featureName] &&
-              filterText.text.length == 0 ?
-              true
-              : filterText.text.some((text) => item[filterText.featureName]?.includes(text)),
+              item[filterText.featureName].toString().includes(filterText.text)
           )
         )
       )

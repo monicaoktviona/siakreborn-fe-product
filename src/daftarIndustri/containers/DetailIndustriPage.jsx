@@ -19,6 +19,7 @@ const [isLoading, setIsLoading] = useState({
 	const { setTitle } = useContext(HeaderContext);
 
 const [detailDataIndustri, setDetailDataIndustri] = useState()
+const { id } = useParams()
 useEffect(() => {
 	const fetchData = async () => {
 		try {

@@ -71,20 +71,6 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField,
             label: "Status Akademik",
   		      featureName: "statusAkademik",
             editable:  false 
-          },
-          {
-            id: "filterTahunLulus",
-            condition: "isHeading",
-            label: "Filter Tahun Lulus",
-  		      featureName: "",
-            editable:  false 
-          },
-          {
-            id: "filterAngkatan",
-            condition: "isHeading",
-            label: "Filter Angkatan",
-  		      featureName: "angkatanSelectionField",
-            editable:  false 
           }
   ]}
         itemsEvents={(semuaItem) => [
