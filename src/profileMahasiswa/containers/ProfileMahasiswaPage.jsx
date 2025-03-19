@@ -8,6 +8,7 @@ import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
 import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
+import { useAuth } from "@/commons/auth"; 
 
 import ProfileDetails from '../components/ProfileDetails'
 import getDataMahasiswa from '../services/getDataMahasiswa'
@@ -18,12 +19,14 @@ const [isLoading, setIsLoading] = useState({
 	});
 	const { setTitle } = useContext(HeaderContext);
 
+const { checkPermission } = useAuth(); 
+const { id } = useParams()
 const [dataMahasiswa, setDataMahasiswa] = useState()
 useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, profileDetails: true}))
-			const { data: dataMahasiswa } = await getDataMahasiswa({ id, id })
+			const { data: dataMahasiswa } = await getDataMahasiswa({ id })
 			setDataMahasiswa(dataMahasiswa.data)
 		} finally {
 			setIsLoading(prev => ({...prev, profileDetails: false}))

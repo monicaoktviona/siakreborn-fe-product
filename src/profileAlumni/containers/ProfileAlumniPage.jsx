@@ -8,6 +8,7 @@ import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
 import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
+import { useAuth } from "@/commons/auth"; 
 
 import ProfileDetails from '../components/ProfileDetails'
 import getDataAlumni from '../services/getDataAlumni'
@@ -18,6 +19,8 @@ const [isLoading, setIsLoading] = useState({
 	});
 	const { setTitle } = useContext(HeaderContext);
 
+const { checkPermission } = useAuth(); 
+const { id } = useParams()
 const [dataAlumni, setDataAlumni] = useState()
 useEffect(() => {
 	const fetchData = async () => {

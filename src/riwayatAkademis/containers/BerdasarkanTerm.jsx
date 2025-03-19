@@ -13,6 +13,7 @@ import { useAuth } from '@/commons/auth';
 import TermTable from "../components/TermTable";
 
 import getTermRiwayatAkademisDataList from '../services/getTermRiwayatAkademisDataList'
+import { formatAcademicYear } from "@/commons/utils/getFormatAcademicYear";
 const BerdasarkanTerm = props => {
 const { checkPermission } = useAuth();
 
@@ -49,18 +50,22 @@ return (
 			</>
 		}
 	>
-<Layouts.ListContainerTableLayout
-	title={"Table Term Riwayat Akademis"}
-	singularName={"Term"}
-	items={[termRiwayatAkademisDataList]}
-	isLoading={isLoading.tableTermRiwayatAkademis}
->
-	<TermTable
-		
-		termRiwayatAkademisDataList={termRiwayatAkademisDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
+ {termRiwayatAkademisDataList?.map((term, idx) => {
+        return (
+          <div key={idx} className="flex flex-col gap-4">
+            <Layouts.ListContainerTableLayout
+              title={
+                term.kode ? formatAcademicYear(term.kode) : "Undefined term"
+              }
+              singularName={"Berdasarkan Term"}
+              items={[term.kelas]}
+              isLoading={isLoading.tableTermRiwayatAkademis}
+            >
+              <TermTable termRiwayatAkademisDataList={term.kelas} />
+            </Layouts.ListContainerTableLayout>
+          </div>
+        );
+      })}
 
 	</Layouts.ViewContainerLayout>
   )

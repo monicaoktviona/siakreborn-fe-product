@@ -4,9 +4,11 @@ import Brand from "../Brand";
 import { FiLogOut } from "react-icons/fi";
 import useNavigation from "./useNavigation";
 import { Link } from "react-router";
+import useAuth from "@/commons/auth";
 
 const Sidebar = () => {
   const { handleLogout, isAuthenticated, navbarMenus } = useNavigation();
+  const { checkPermission } = useAuth();
 
   return (
     <div className="z-50 fixed top-0 left-0">
@@ -16,14 +18,20 @@ const Sidebar = () => {
         </div>
 
         <div className="h-full overflow-y-auto">
-          <Menu>
+        <Menu>
             {navbarMenus.map((menu) => (
-              <MenuItem
-                key={menu.label}
-                {...menu}
-                sidebarToggleId="navigation-sidebar"
-                isCollapsed
-              />
+              <>
+                {(menu.subMenus && menu.subMenus.length > 0
+                  ? menu.subMenus.some((s) => checkPermission(s.permission))
+                  : checkPermission(menu.permission)) && (
+                  <MenuItem
+                    key={menu.label}
+                    {...menu}
+                    sidebarToggleId="navigation-sidebar"
+                    isCollapsed
+                  />
+                )}
+              </>
             ))}
           </Menu>
         </div>

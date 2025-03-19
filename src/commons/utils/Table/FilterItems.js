@@ -7,7 +7,7 @@ const filterItems = (items, filterTextList) => {
               item[filterText.featureName] &&
               filterText.text.length == 0 ?
               true
-              : filterText.text.some((text) => item[filterText.featureName].includes(text)),
+              : filterText.text.some((text) => item[filterText.featureName]?.includes(text)),
           )
         )
       )

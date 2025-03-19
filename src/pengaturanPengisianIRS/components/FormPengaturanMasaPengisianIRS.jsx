@@ -1,116 +1,94 @@
-/*
-	Generated on 12/02/2025 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.14
-*/
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { useNavigate, useSearchParams } from "react-router";
-import {
-  Button,
-  Form,
-  SelectionField,
-  MultiSelectionField,
-  InputField,
-  MultiSelectField,
-  RadioInputField,
-  TextAreaField,
-  RichTextField,
-  VisualizationAttr,
-  Spinner,
-  
-} from "@/commons/components";
-import {
-  ALLOWED_PERMISSIONS,
-  findAllowedPermission,
-} from "@/commons/constants/allowedPermission";
+import { useNavigate } from "react-router";
+import { Button, InputField } from "@/commons/components";
 import cleanFormData from "@/commons/utils/cleanFormData";
-import updateRencanaStudi from '../services/updateRencanaStudi'
-
+import updateRencanaStudi from "../services/updateRencanaStudi";
 import { notifyError } from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
+import { Spinner } from "@/commons/components";
 
-const FormPengaturanMasaPengisianIRS = ({ 
-	periodePengisianIRS
- }) => {
-  const { 
-    control, 
-    handleSubmit,
-  } = useForm()
-  
-  
-  
-  
-  
-  
-  
-  const navigate = useNavigate()
-  
+const FormPengaturanMasaPengisianIRS = ({ periodeData }) => {
+  const { control, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const simpan = (data) => {
-    const cleanData = cleanFormData(data)
-    updateRencanaStudi({
-      ...cleanData,
-    })
-    .then(({ data: { data } }) => {
-    })
-    .catch((error) => {
-      console.error(error);
-      notifyError(error);
+    const cleanData = cleanFormData({
+      mulai: new Date(data.mulai).toISOString(),
+      akhir: new Date(data.akhir).toISOString(),
     });
-  }
-  
-  
-  return (
-	  <Layouts.FormComponentLayout
-		  title="Pengaturan Masa Pengisian IRS" 
-		  onSubmit={handleSubmit(simpan)}
-	
-	    vas={[
-		  ]}
-	
-		  formFields={[
-			  
-			  <Controller
-			    key="mulai"
-		        name="mulai"
-		        control={control}
-		        render={({ field, fieldState }) => (
-				  <InputField
-		            label="Tanggal Mulai"
-		            placeholder="Masukkan tanggal mulai"
-					type="date"
-		            fieldState={fieldState}
-					{...field}
-					isRequired={false}
-		          />
-		        )}
-		      />
-	,
-			  
-			  <Controller
-			    key="akhir"
-		        name="akhir"
-		        control={control}
-		        render={({ field, fieldState }) => (
-				  <InputField
-		            label="Tanggal Akhir"
-		            placeholder="Masukkan tanggal akhir"
-					type="date"
-		            fieldState={fieldState}
-					{...field}
-					isRequired={false}
-		          />
-		        )}
-		      />
-		  ,
-	
-		  ]}
-	
-		  itemsEvents={[
-				<Button key="Simpan" type="submit" variant="primary">Simpan</Button>
-	    ]}
-	  />
-  )
-}
 
-export default FormPengaturanMasaPengisianIRS
+    setIsLoading(true);
+
+    updateRencanaStudi(cleanData)
+      .then(({ data: { data } }) => {})
+      .catch((error) => {
+        console.error(error);
+        notifyError(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  return (
+    <>
+      {isLoading ? (
+        <div className="flex justify-center items-center h-full">
+          <Spinner />
+        </div>
+      ) : (
+        <Layouts.FormComponentLayout
+          title="Pengaturan Masa Pengisian IRS"
+          onSubmit={handleSubmit(simpan)}
+          formFields={[
+            <Controller
+              name="mulai"
+              defaultValue={
+                periodeData?.mulai === undefined
+                  ? ""
+                  : new Date(periodeData?.mulai).toISOString().slice(0, -1)
+              }
+              control={control}
+              render={({ field }) => (
+                <InputField
+                  {...field}
+                  type="datetime-local"
+                  label="Tanggal Mulai"
+                  placeholder="Pilih tanggal mulai pengisian IRS"
+                />
+              )}
+              rules={{ required: true }}
+            />,
+            <Controller
+              name="akhir"
+              defaultValue={
+                periodeData?.akhir === undefined
+                  ? ""
+                  : new Date(periodeData?.akhir).toISOString().slice(0, -1)
+              }
+              control={control}
+              render={({ field }) => (
+                <InputField
+                  {...field}
+                  type="datetime-local"
+                  label="Tanggal Akhir"
+                  placeholder="Pilih tanggal akhir pengisian IRS"
+                />
+              )}
+              rules={{ required: true }}
+            />,
+          ]}
+          itemsEvents={[
+            <Button type="submit" variant="primary">
+              Simpan
+            </Button>,
+          ]}
+        />
+      )}
+    </>
+  );
+};
+
+export default FormPengaturanMasaPengisianIRS;

@@ -18,8 +18,7 @@ const KelasTable = ({ kelasDataList,
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (kelasItem) => {
-    isMobile() && navigate(`/kelas/${kelasItem.kelasId}`
-    );
+    isMobile() && navigate(`/kelas/${kelasItem.id}`);
   };
   
   
@@ -77,19 +76,11 @@ const KelasTable = ({ kelasDataList,
             editable:  false 
           }
   ]}
-        itemsEvents={(kelasItem) => [
-          <Link to={`/kelas/${kelasItem.kelasId}`}>
-            <Button
-          	size="sm"
-          	variant=
-          		"primary"
-            >
-              Detail
-            </Button>
-          </Link>
-          
-          
-        ]}
+  itemsEvents={(kelasItem) => [
+    <Link to={`/kelas/${kelasItem.id}`}>
+      <Button variant="primary">Detail</Button>
+    </Link>,
+  ]}
     	  itemsModals={(kelasItem) => [
         ]}
   	/>

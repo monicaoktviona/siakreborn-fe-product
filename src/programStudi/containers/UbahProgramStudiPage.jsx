@@ -13,7 +13,7 @@ import FormUbahProgramStudi from '../components/FormUbahProgramStudi'
 
 import getProgramStudiData from '../services/getProgramStudiData'
 const UbahProgramStudiPage = props => {
-const { id } = useParams()
+// const { id } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
 	ubahProgramStudi: false,

@@ -11,6 +11,7 @@ export {
 export { default as Detail } from "./Detail";
 export { default as Footer } from "./Footer";
 export { default as Form } from "./Form";
+export { default as IRSForm } from "./Form/IRSForm";
 export { default as InputField } from "./Form/InputField";
 export { default as FileInputField } from "./Form/FileInputField";
 export { default as SelectionField } from "./Form/SelectionField";
@@ -37,3 +38,4 @@ export { default as Toast } from "./Toast";
 export { default as Modal } from "./Modal";
 export { default as Spinner } from "./Spinner";
 export { default as VisualizationAttr } from "./VisualizationAttr";
+export { default as ToasterError } from "./Toast/ToastError";

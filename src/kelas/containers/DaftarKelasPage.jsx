@@ -62,18 +62,26 @@ return (
 			</>
 		}
 	>
-<Layouts.ListContainerTableLayout
-	title={"Daftar Kelas"}
-	singularName={"Kelas"}
-	items={[kelasDataList]}
-	isLoading={isLoading.daftarKelas}
->
-	<KelasTable
-		
-		kelasDataList={kelasDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
+      {isLoading.tableKelas ? (
+        <div className="flex justify-center items-center h-full">
+          <Spinner />
+        </div>
+      ) : (
+        <>
+          {kelasDataList?.map((mk, idx) => (
+            <div key={idx}>
+              <Layouts.ListContainerTableLayout
+                title={mk.nama}
+                singularName={"Kelas"}
+                items={[mk.kelas]}
+                isLoading={isLoading.daftarKelas}
+              >
+                <KelasTable kelasDataList={mk.kelas} />
+              </Layouts.ListContainerTableLayout>
+            </div>
+          ))}
+        </>
+      )}
 
 	</Layouts.ViewContainerLayout>
   )

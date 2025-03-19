@@ -43,17 +43,18 @@ const [mataKuliahDipilihDataList, setMataKuliahDipilihDataList] = useState()
 
 
 useEffect(() => {
-		const fetchData = async () => {
-			try {
-				setIsLoading(prev => ({...prev, daftarMataKuliahDipilih: true}))
-				const { data: mataKuliahDipilihDataList } = await getMataKuliahDipilihDataList()
-				setMataKuliahDipilihDataList(mataKuliahDipilihDataList.data)
-			} finally {
-				setIsLoading(prev => ({...prev, daftarMataKuliahDipilih: false}))
-			}
-		}
-		fetchData()	
-  	}, [])
+    const fetchData = async () => {
+      try {
+        setIsLoading((prev) => ({ ...prev, tableMataKuliahDipilih: true }));
+        const { data: mataKuliahDipilihDataList } =
+          await getMataKuliahDipilihDataList();
+        setMataKuliahDipilihDataList(mataKuliahDipilihDataList.data);
+      } finally {
+        setIsLoading((prev) => ({ ...prev, tableMataKuliahDipilih: false }));
+      }
+    };
+    fetchData();
+  }, []);
 
 	
 	useEffect(() => {
@@ -64,12 +65,12 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerButtonLayout>
-			  	<Link to={`invalid
-			  	`}>
-			  		<Button className="p-2 w-full" variant="primary">
-			  		  Isi/Ubah IRS
-			  		</Button>
-			  	</Link>
+			<Link to={`/irs/isi`}>
+              {" "}
+              <Button className="p-2 w-full" variant="primary">
+                Isi/Ubah IRS
+              </Button>
+            </Link>
 			  	
 			  	
 			  	
@@ -89,17 +90,15 @@ return (
 	<IRS {...{ data : { ...detailIRSDataList }}} />
 </Layouts.DetailContainerLayout>
 <Layouts.ListContainerTableLayout
-	title={"Daftar Mata Kuliah Dipilih"}
-	singularName={"Mata"}
-	items={[mataKuliahDipilihDataList]}
-	isLoading={isLoading.daftarMataKuliahDipilih}
->
-	<MataTable
-		
-		mataKuliahDipilihDataList={mataKuliahDipilihDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
+        title={"Daftar Mata Kuliah Dipilih"}
+        singularName={"Mata"}
+        items={[mataKuliahDipilihDataList?.kelas]}
+        isLoading={isLoading.tableMataKuliahDipilih}
+      >
+        <MataTable
+          mataKuliahDipilihDataList={mataKuliahDipilihDataList?.kelas}
+        />
+      </Layouts.ListContainerTableLayout>
 
 	</Layouts.ViewContainerLayout>
   )
