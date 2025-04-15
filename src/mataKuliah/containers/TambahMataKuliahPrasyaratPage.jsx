@@ -27,12 +27,13 @@ const { parentMataKuliahId } = useParams()
 
 const [mataKuliah, setMataKuliah] = useState()
 const [syarat, setSyarat] = useState()
+const { id } = useParams();
 
 useEffect(() => {
     const fetch = async () => {
 	  setIsLoading(prev => ({...prev, tambahMataKuliahPrasyarat: true}))
-		const { data: mataKuliahResponse } = await getMataKuliah({ parentMataKuliahId  })
-		const { data: syaratResponse } = await getSyarat({ parentMataKuliahId  })
+		const { data: mataKuliahResponse } = await getMataKuliah({ parentMataKuliahId: id  })
+		const { data: syaratResponse } = await getSyarat({ })
 
 	    setMataKuliah(mataKuliahResponse.data)
 	    setSyarat(syaratResponse.data)
@@ -54,7 +55,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/matakuliah/:id
+			  	<Link to={`/matakuliah/${id}
 			  	`}>
 			  		<Button className="p-4" variant="secondary">
 			  		  Kembali

@@ -9,6 +9,9 @@ import TambahMataKuliahPage from './containers/TambahMataKuliahPage'
 import DaftarMataKuliahPage from './containers/DaftarMataKuliahPage'
 import DetailMataKuliahPage from './containers/DetailMataKuliahPage'
 import UbahMataKuliahPage from './containers/UbahMataKuliahPage'
+import DetailMataKuliahPrasyaratPage from './containers/DetailMataKuliahPrasyaratPage'
+import UbahMataKuliahPrasyaratPage from './containers/UbahMataKuliahPrasyaratPage'
+import TambahMataKuliahPrasyaratPage from './containers/TambahMataKuliahPrasyaratPage'
 
 const mataKuliahRoutes = [
 	{

@@ -28,7 +28,7 @@ const PrasyaratTable = ({ prasyaratMataKuliahDataList,
   	const { id,  } = useParams();
   const navigate = useNavigate();
   const detail = async (prasyaratItem) => {
-    isMobile() && navigate(`/matakuliah/:id/prasyarat/:prasyaratId`
+    isMobile() && navigate(`/matakuliah/${id}/prasyarat/${prasyaratItem.id}`
     );
   };
   
@@ -85,12 +85,12 @@ const PrasyaratTable = ({ prasyaratMataKuliahDataList,
             id: "syarat",
             condition: "",
             label: "Syarat",
-  		  featureName: "",
+  		  featureName: "syarat",
             editable:  false 
           }
   ]}
         itemsEvents={(prasyaratItem) => [
-          <Link to={`/matakuliah/:id/prasyarat/:prasyaratId`}>
+          <Link to={`/matakuliah/${id}/prasyarat/${prasyaratItem.id}`}>
             <Button
               size="sm"
               variant=
@@ -106,19 +106,16 @@ const PrasyaratTable = ({ prasyaratMataKuliahDataList,
           <Modal
               isShow={showModalKonfirmasiHapusMataKuliah}
               title={"Konfirmasi Hapus Mata Kuliah"}
-              text={"Are you sure want to proceed?"}
-              >
-              
-              
-              
-              <Link to=''><Button className={`w-full`} variant="tertiary" onClick={() => setShowModalKonfirmasiHapusMataKuliah(false)}>Batal</Button></Link>
+          >
+            <Link to=''><Button variant="tertiary" onClick={() => setShowModalKonfirmasiHapusMataKuliah(false)}>Batal</Button></Link>
           <Button
             variant="danger"
-            onClick={() => hapus(selectedKonfirmasiHapusMataKuliah)}
+            onClick={() => hapus(prasyaratItem)}
           >
             Hapus
           </Button>
           </Modal>
+          
         ]}
   	/>		
   </>

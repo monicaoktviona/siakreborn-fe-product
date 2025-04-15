@@ -29,6 +29,7 @@ const { checkPermission } = useAuth();
 
 	});
 	const { setTitle } = useContext(HeaderContext);
+	const { id } = useParams();
 
 const [mataKuliahDataDetail, setMataKuliahDataDetail] = useState()
 useEffect(() => {
@@ -53,7 +54,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, daftarCPMK: true}))
-				const { data: cPMKDataList } = await getCPMKDataList({ mataKuliahId })
+				const { data: cPMKDataList } = await getCPMKDataList({ mataKuliahId: id })
 				setCPMKDataList(cPMKDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, daftarCPMK: false}))
@@ -71,7 +72,7 @@ useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, daftarPrasyaratMataKuliah: true}))
-				const { data: prasyaratMataKuliahDataList } = await getPrasyaratMataKuliahDataList({ mataKuliahId })
+				const { data: prasyaratMataKuliahDataList } = await getPrasyaratMataKuliahDataList({ mataKuliahId: id })
 				setPrasyaratMataKuliahDataList(prasyaratMataKuliahDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, daftarPrasyaratMataKuliah: false}))
@@ -103,7 +104,7 @@ return (
 			  	
 			  <Layouts.ViewContainerButtonLayout>
 			  	{checkPermission("SaveMataKuliahPrasyarat") &&  (
-			  	  <Link to={`/matakuliah/:id/prasyarat/tambah
+			  	  <Link to={`/matakuliah/${id}/prasyarat/tambah
 			  	  `}>
 			  	  	<Button className="p-2 w-full" variant="primary">
 			  	  	  Tambah Prasyarat

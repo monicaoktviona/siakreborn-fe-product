@@ -18,6 +18,7 @@ import getMataKuliah from '../services/getMataKuliah'
 import getSyarat from '../services/getSyarat'
 const UbahMataKuliahPrasyaratPage = props => {
 const { prasyaratId } = useParams()
+const { id } = useParams()
 	const { checkPermission } = useAuth();
 
 	const [isLoading, setIsLoading] = useState({
@@ -34,8 +35,8 @@ useEffect(() => {
     const fetch = async () => {
 	  setIsLoading(prev => ({...prev, ubahMataKuliahPrasyarat: true}))
 		const { data: mataKuliahPrasyaratUbahResponse } = await getMataKuliahPrasyaratUbah({ prasyaratId  })
-		const { data: mataKuliahResponse } = await getMataKuliah({ prasyaratId  })
-		const { data: syaratResponse } = await getSyarat({ prasyaratId  })
+		const { data: mataKuliahResponse } = await getMataKuliah({ parentMataKuliahId: id  })
+		const { data: syaratResponse } = await getSyarat({ })
 
 	    setMataKuliahPrasyaratUbah(mataKuliahPrasyaratUbahResponse.data)
 	    setMataKuliah(mataKuliahResponse.data)
@@ -58,7 +59,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/matakuliah/:id/prasyarat/:prasyaratId
+			  	<Link to={`/matakuliah/${id}/prasyarat/${prasyaratId}
 			  	`}>
 			  		<Button className="p-4" variant="secondary">
 			  		  Kembali

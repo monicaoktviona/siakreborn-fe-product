@@ -22,6 +22,7 @@ const { checkPermission } = useAuth();
 	const { setTitle } = useContext(HeaderContext);
 
 const [prasyaratMataKuliahDataDetail, setPrasyaratMataKuliahDataDetail] = useState()
+const { prasyaratId, id } = useParams();
 useEffect(() => {
 	const fetchData = async () => {
 		try {
@@ -46,7 +47,7 @@ return (
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/matakuliah/:id
+			  	<Link to={`/matakuliah/${id}
 			  	`}>
 			  		<Button className="p-4 w-full" variant="secondary">
 			  		  Kembali

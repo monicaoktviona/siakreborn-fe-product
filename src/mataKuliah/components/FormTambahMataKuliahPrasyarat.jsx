@@ -48,16 +48,17 @@ const FormTambahMataKuliahPrasyarat = ({
   
   
   
-  
+  const { id } = useParams();
   const navigate = useNavigate()
   
   const tambah = (data) => {
     const cleanData = cleanFormData(data)
     saveMataKuliahPrasyarat({
+	  parentMataKuliahId: id,
       ...cleanData,
     })
     .then(({ data: { data } }) => {
-     navigate(`/matakuliah/${mataKuliah.id}`)
+     navigate(`/matakuliah/${id}`)
   	notifySuccess(`Save MataKuliahPrasyarat berhasil!`);
     })
     .catch((error) => {

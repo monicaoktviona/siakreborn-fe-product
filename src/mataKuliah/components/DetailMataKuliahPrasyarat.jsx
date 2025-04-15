@@ -8,6 +8,7 @@ import { useNavigate, Link } from "react-router";
 
 import { useAuth } from '@/commons/auth';
 import { Button, Detail, VisualizationAttr, Modal, Spinner } from '@/commons/components';
+import { useParams } from "@/commons/hooks/useParams";
 
 import deleteMataKuliahPrasyarat from '../services/deleteMataKuliahPrasyarat';
 
@@ -17,10 +18,11 @@ import * as Layouts from "@/commons/layouts";
 const DetailMataKuliahPrasyarat = ({ data }) => {
     const { checkPermission } = useAuth();
     const navigate = useNavigate();
+    const { id } = useParams();
     const [showModalKonfirmasiHapusMataKuliahPrasyarat, setShowModalKonfirmasiHapusMataKuliahPrasyarat] = React.useState(false); 
     const ubahMataKuliahPrasyarat = async () => {
       navigate(
-        '/matakuliah/:id/prasyarat/ubah?'
+        `/matakuliah/${id}/prasyarat/ubah?`
         + `prasyaratId=${data.id}`
         
       );
@@ -30,9 +32,9 @@ const DetailMataKuliahPrasyarat = ({ data }) => {
   
     const hapus = async () => {
       await deleteMataKuliahPrasyarat({
-        invalid: data.id,
+        id: data.id,
       });
-      navigate('/matakuliah/:id');
+      navigate(`/matakuliah/${id}`);
     };
   
   return (
