@@ -43,6 +43,24 @@ const mataKuliahRoutes = [
 		</RequireAuth>
 	  ),
 	},
+	{ 
+		path: "/matakuliah/:id/prasyarat/ubah",
+		element: <RequireAuth permissionNeeded="UpdateMataKuliahPrasyarat" ><UbahMataKuliahPrasyaratPage/></RequireAuth>
+	}
+	
+		
+	,
+	{ 
+		path: "/matakuliah/:id/prasyarat/tambah",
+		element: <RequireAuth permissionNeeded="SaveMataKuliahPrasyarat" ><TambahMataKuliahPrasyaratPage/></RequireAuth>
+	}
+	
+		
+	,
+	{ 
+		path: "/matakuliah/:id/prasyarat/:prasyaratId",
+		element: <RequireAuth permissionNeeded="ReadMataKuliahPrasyarat" ><DetailMataKuliahPrasyaratPage/></RequireAuth>
+	}
 ];
   
 export default mataKuliahRoutes
