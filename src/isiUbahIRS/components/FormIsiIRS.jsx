@@ -29,7 +29,7 @@ import saveRencanaStudiMe from '../services/saveRencanaStudiMe'
 
 import { notifyError } from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
-
+import KelasTable from "./KelasTable";
 const FormIsiIRS = ({ 
   formTitle,
   kelasRencanaStudiDataList,
@@ -51,11 +51,11 @@ const FormIsiIRS = ({
   const navigate = useNavigate()
   
   const simpan = (data) => {
-    const cleanData = cleanFormData(data)
+    // const cleanData = cleanFormData(data)
     const req = {
       kelasIds: selectedClasses.map((item) => item.id),
     };
-    saveRencanaStudi(req)
+    saveRencanaStudiMe(req)
       .then(({ data: { data } }) => {
         navigate('/irs/ringkasan')
       })
@@ -67,7 +67,7 @@ const FormIsiIRS = ({
   
   
   return (
-	  <Layouts.FormComponentLayout
+	  <Layouts.IRSFormComponentLayout
 		  title="Isi IRS" 
 		  onSubmit={handleSubmit(simpan)}
 	

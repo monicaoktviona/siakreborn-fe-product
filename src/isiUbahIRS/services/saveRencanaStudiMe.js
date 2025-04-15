@@ -9,7 +9,7 @@ const saveRencanaStudiMe = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/rencanastudime/save`, body,
+	return axios.post(`${environment.rootApi}/call/rencanastudi/me/save`, body,
 	{
 		params: { token },
 		

@@ -45,12 +45,12 @@ const [mataKuliahDipilihDataList, setMataKuliahDipilihDataList] = useState()
 useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading((prev) => ({ ...prev, tableMataKuliahDipilih: true }));
+        setIsLoading((prev) => ({ ...prev, daftarMataKuliahDipilih: true }));
         const { data: mataKuliahDipilihDataList } =
           await getMataKuliahDipilihDataList();
         setMataKuliahDipilihDataList(mataKuliahDipilihDataList.data);
       } finally {
-        setIsLoading((prev) => ({ ...prev, tableMataKuliahDipilih: false }));
+        setIsLoading((prev) => ({ ...prev, daftarMataKuliahDipilih: false }));
       }
     };
     fetchData();
@@ -93,7 +93,7 @@ return (
         title={"Daftar Mata Kuliah Dipilih"}
         singularName={"Mata"}
         items={[mataKuliahDipilihDataList?.kelas]}
-        isLoading={isLoading.tableMataKuliahDipilih}
+        isLoading={isLoading.daftarMataKuliahDipilih}
       >
         <MataTable
           mataKuliahDipilihDataList={mataKuliahDipilihDataList?.kelas}

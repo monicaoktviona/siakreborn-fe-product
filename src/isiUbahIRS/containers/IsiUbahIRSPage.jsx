@@ -4,7 +4,6 @@
 	version 3.5.14
 */
 import React, { useEffect, useState, useContext} from 'react'
-import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
 import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
@@ -12,7 +11,7 @@ import { useNavigate } from "react-router";
 import { useAuth } from '@/commons/auth';
 import FormIsiIRS from '../components/FormIsiIRS'
 import KelasTable from "../components/KelasTable";
-
+import { Detail, Spinner } from "@/commons/components";
 import getKelasRencanaStudiDataList from '../services/getKelasRencanaStudiDataList'
 const IsiUbahIRSPage = props => {
 const { checkPermission } = useAuth();
@@ -29,13 +28,34 @@ const [kelasRencanaStudiDataList, setKelasRencanaStudiDataList] = useState()
 const [selectedClasses, setSelectedClasses] = useState([]);
   const [formTitle, setFormTitle] = useState();
   const [isIRSPeriod, setIsIRSPeriod] = useState(true);
-  const [fallback, setFallback] = useState("");	
+  const [fallback, setFallback] = useState("");
+
+  const handleChange = (item) => {
+    const mkIdx = selectedClasses.findIndex(
+      (i) => i.mataKuliahId === item.mataKuliahId
+    );
+
+    const idx = selectedClasses.findIndex((i) => i.id === item.id);
+
+    if (idx !== -1) {
+      setSelectedClasses([
+        ...selectedClasses.slice(0, idx),
+        ...selectedClasses.slice(idx + 1),
+      ]);
+    } else if (mkIdx !== -1) {
+      setSelectedClasses([
+        ...selectedClasses.filter((i) => i.mataKuliahId !== item.mataKuliahId),
+        item,
+      ]);
+    } else setSelectedClasses([...selectedClasses, item]);
+  };
+
 useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, tableKelasRencanaStudi: true}))
 				const { data: kelasRencanaStudiDataList } = await getKelasRencanaStudiDataList({  })
-				setKelasRencanaStudiDataList(kelasRencanaStudiDataList.data)
+				setKelasRencanaStudiDataList(kelasRencanaStudiDataList.data.mataKuliah)
 				setFormTitle(kelasRencanaStudiDataList.data.title);
 				setSelectedClasses(
 				  kelasRencanaStudiDataList.data.mataKuliah
@@ -67,26 +87,32 @@ return (
 			</>
 		}
 	>
-<Layouts.FormContainerLayout
-		singularName={"IRS"}
-		
-	>
-		<FormIsiIRS
-			{...props}
-		/>
-	</Layouts.FormContainerLayout>
-<Layouts.ListContainerTableLayout
-	title={"Table Kelas Rencana Studi"}
-	singularName={"Kelas"}
-	items={[kelasRencanaStudiDataList]}
-	isLoading={isLoading.tableKelasRencanaStudi}
->
-	<KelasTable
-		
-		kelasRencanaStudiDataList={kelasRencanaStudiDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
+	{isLoading.tableKelasRencanaStudi ? (
+        <div className="flex justify-center items-center h-full">
+          <Spinner />
+        </div>
+      ) : (
+        <>
+          {isIRSPeriod ? (
+            <Layouts.FormContainerLayout singularName={"IRS"}>
+              <FormIsiIRS
+                formTitle={formTitle}
+                kelasRencanaStudiDataList={kelasRencanaStudiDataList}
+                selectedClasses={selectedClasses}
+                handleChange={handleChange}
+                isLoading={isLoading.tableKelasRencanaStudi}
+              />
+            </Layouts.FormContainerLayout>
+          ) : (
+            <Layouts.ViewContainerLayout>
+              <Detail
+                // eslint-disable-next-line react/no-children-prop
+                children={<p className="w-full text-center">{fallback}</p>}
+              />
+            </Layouts.ViewContainerLayout>
+          )}
+        </>
+      )}
 
 	</Layouts.ViewContainerLayout>
   )

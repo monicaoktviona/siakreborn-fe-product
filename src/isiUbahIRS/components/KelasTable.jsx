@@ -23,9 +23,11 @@ const KelasTable = ({ kelasRencanaStudiDataList, handleChange, selectedClasses }
   
   
   return (
-    <Layouts.ListComponentTableLayout
+    <Layouts.FormListComponentTableLayout
   	  items={[kelasRencanaStudiDataList]}
   	  detail={detail}
+      selected={selectedClasses}
+      handleChange={handleChange}
   	  itemsAttrs={[
         {
           id: "radio",
@@ -82,6 +84,9 @@ const KelasTable = ({ kelasRencanaStudiDataList, handleChange, selectedClasses }
           }
   ]}
         itemsEvents={(kelasItem) => [
+          <Link to={`/kelas/${kelasItem.id}`}>
+            <Button variant="secondary">Detail</Button>
+          </Link>,
           
           
         ]}
