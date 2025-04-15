@@ -38,6 +38,7 @@ import programStudiRoutes from "@/programStudi/routes";
 import pengumumanAlumniRoutes from "@/pengumumanAlumni/routes";
 import pengumumanIndustriRoutes from "@/pengumumanIndustri/routes";
 import pengumumanAdminAkademikRoutes from "@/pengumumanAdminAkademik/routes";
+import pilihProdiRoutes from "@/pilihProdi/routes";
 
 const GlobalRoutes = () => {
   const router = useRoutes([
@@ -79,7 +80,8 @@ const GlobalRoutes = () => {
 	...programStudiRoutes, 
 	...pengumumanAlumniRoutes, 
 	...pengumumanIndustriRoutes, 
-	...pengumumanAdminAkademikRoutes, 
+	...pengumumanAdminAkademikRoutes,
+	...pilihProdiRoutes,  
   ])
   return router
 }

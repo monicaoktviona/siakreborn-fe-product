@@ -12,6 +12,7 @@ import { Button, Detail, VisualizationAttr, Modal, Spinner } from '@/commons/com
 import deleteKurikulum from '../services/deleteKurikulum';
 
 import * as Layouts from "@/commons/layouts";
+import convertByteArrayToBlobUrl from '@/commons/utils/byteArrayToBlobUrl'
 
 
 const DetailKurikulum = ({ data }) => {
@@ -34,67 +35,90 @@ const DetailKurikulum = ({ data }) => {
       });
       navigate('/kurikulum');
     };
+
+    data.sKUrl = data.sKUrl
+    ? (
+        <embed
+          src={convertByteArrayToBlobUrl(data.sKUrl)}
+          type="application/pdf"
+          className="w-full h-80 rounded-md border"
+        />
+      )
+    : (
+      <div className="w-full h-80 flex items-center justify-center text-gray-500">
+          Dokumen SK tidak tersedia
+        </div>
+      );
   
-  return (
-    <Layouts.DetailComponentLayout
-      item={data}
-      itemsAttrs={[
-        {
-          id: "kode",
-          condition: "",
-          label: "Kode",
-          featureName: "kode",
-        }
-        ,
-        {
-          id: "nomorSK",
-          condition: "",
-          label: "Nomor SK",
-          featureName: "noSK",
-        }
-        ,
-        {
-          id: "status",
-          condition: "",
-          label: "Status",
-          featureName: "status",
-        }
-        ,
-        {
-          id: "profilLulusan",
-          condition: "",
-          label: "Profil Lulusan",
-          featureName: "profilLulusan",
-        }
-        ,
-        {
-          id: "programStudi",
-          condition: "",
-          label: "Program Studi",
-          featureName: "programStudiName",
-        }
-        
-      ]}
+
+      
+    return (
+      <Layouts.DetailComponentLayout
+        item={data}
+        itemsAttrs={[
+          {
+            id: "kode",
+            condition: "",
+            label: "Kode",
+            featureName: "kode",
+          }
+          ,
+          {
+            id: "nomorSK",
+            condition: "",
+            label: "Nomor SK",
+            featureName: "noSK",
+          }
+          ,
+          {
+            id: "status",
+            condition: "",
+            label: "Status",
+            featureName: "status",
+          }
+          ,
+          {
+            id: "profilLulusan",
+            condition: "",
+            label: "Profil Lulusan",
+            featureName: "profilLulusan",
+          }
+          ,
+          {
+            id: "programStudi",
+            condition: "",
+            label: "Program Studi",
+            featureName: "programStudiName",
+          }
+          ,
+          {
+            id: "dokumenSK",
+            condition: "",
+            label: "Dokumen SK",
+            featureName: "sKUrl",
+          }
+          
+        ]}
       itemsEvents={[
-            checkPermission("DeleteKurikulum") &&  (
-              <Button
-                variant="tertiary"
-                onClick={() => setShowModalKonfirmasiHapusKurikulum(true)}
-              >
-                Hapus
-              </Button>
-            )
-        ,
-            checkPermission("UpdateKurikulum") &&  (
-              <Button
-                variant="secondary"
-                onClick={() => ubahKurikulum()}
-              >
-                Ubah Kurikulum
-              </Button>
-            )
-        
-      ]}
+        checkPermission("DeleteKurikulum") &&  (
+          <Button
+            variant="tertiary"
+            onClick={() => setShowModalKonfirmasiHapusKurikulum(true)}
+          >
+            Hapus
+          </Button>
+        )
+    ,
+        checkPermission("UpdateKurikulum") &&  (
+          <Button
+            variant="secondary"
+            onClick={() => ubahKurikulum()}
+          >
+            Ubah Kurikulum
+          </Button>
+        )
+    
+  ]}
       itemsModals={[
         <Modal
            isShow={showModalKonfirmasiHapusKurikulum}

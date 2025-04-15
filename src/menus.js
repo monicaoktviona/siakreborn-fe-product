@@ -318,3 +318,9 @@ addSubMenu('Pengumuman', {
 	permission: "ReadInformasiAkademik",
 	
 })
+
+addMenu({
+	route: '/pilihprodi',
+	label: 'Pilih Prodi',
+	permission: "SavePilihProdi",
+	})

@@ -1,31 +1,35 @@
 import useAppearance from '@/commons/appearance/useAppearance'
 import React, { forwardRef, useState } from 'react'
 import { INPUT_CLASSNAMES } from './variants'
+import convertByteArrayToBlobUrl from '@/commons/utils/byteArrayToBlobUrl'
 
 const FileInputField = forwardRef(function FileInputField(props, ref) {
   const { label, className = '', kit, defaultValue, fieldState, ...rest } = props
   const interfaceKit = useAppearance()
   const inputStyle = (kit ?? interfaceKit).input
   const inputVariant = INPUT_CLASSNAMES[inputStyle]
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedFile, setSelectedFile] = useState(null)
 
-  const getImage = image => {
-    if (image instanceof File) {
-      return URL.createObjectURL(image)
+
+  const getFileURL = file => {
+    if (file instanceof File) {
+      return URL.createObjectURL(file)
     } else {
-      return image
+      return file
     }
   }
 
-  const checkIsImage = content => {
+  const checkIsPdf = content => {
     if (content instanceof File) {
-      return true
+      return content.type === 'application/pdf'
     }
-    if (!content) {
-      return false
+    if (!content) return false
+
+    if (typeof content === 'string') {
+      return content.toLowerCase().endsWith('.pdf') || content.startsWith('data:application/pdf')
     }
-    if (content?.match(/\.(jpeg|jpg|gif|png)$/) != null) return true
-    return content?.match(/(data:image)/) != null
+
+    return false
   }
 
   if (rest.defaultValue) {
@@ -38,31 +42,37 @@ const FileInputField = forwardRef(function FileInputField(props, ref) {
 
   const handleFileChange = e => {
     props.onChange(e.target.files[0])
-    setSelectedImage(e.target.files[0])
+    setSelectedFile(e.target.files[0])
   }
 
   return (
     <div className="form-control break-inside-avoid">
-      {label && <label className="label label-text justify-start">{label} {props.isRequired && <font className='ml-1' color='red'>*</font>}</label>}
-      {selectedImage && checkIsImage(selectedImage) ?
-        <img
-        src={getImage(selectedImage)}
-        alt={label}
-        className="aspect-[4/3] w-full max-h-96 object-cover rounded-btn overflow-hidden"
-      />
-      : defaultValue && checkIsImage(defaultValue) && 
-        <img
-        src={getImage(defaultValue)}
-        alt={label}
-        className="aspect-[4/3] w-full max-h-96 object-cover rounded-btn overflow-hidden"
-      />
+      {label && (
+        <label className="label label-text justify-start">
+          {label} {props.isRequired && <font className='ml-1' color='red'>*</font>}
+        </label>
+      )}
+      {selectedFile && checkIsPdf(selectedFile) ? (
+        <embed
+          src={getFileURL(selectedFile)}
+          type="application/pdf"
+          className="w-full h-96 rounded-btn overflow-hidden"
+        />
+      ) : !selectedFile && defaultValue && (
+        <embed
+          src={convertByteArrayToBlobUrl(defaultValue)}
+          type="application/pdf"
+          className="w-full h-96 rounded-btn overflow-hidden"
+        />
+      )
       }
       <input
-        className={`file-input w-full ${inputVariant} ${fieldState?.error &&"input-error"} ${className}`}
+        className={`file-input w-full ${inputVariant} ${fieldState?.error && "input-error"} ${className}`}
         ref={ref}
         type="file"
+        accept="application/pdf"
         {...rest}
-        onChange={(e) => handleFileChange(e)}
+        onChange={handleFileChange}
       />
       {fieldState?.error && (
         <label className="label label-text text-error">{fieldState.error.message}</label>

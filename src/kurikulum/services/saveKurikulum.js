@@ -5,6 +5,11 @@ import environment from '@/commons/utils/environment'
 
 const saveKurikulum = (data = {}) => {
 	let body = data;
+	const formData = new FormData();
+	Object.entries(data).forEach(([key, value ]) => {
+		formData.append(key, value);
+	});
+	body = formData;
 
 	const { getToken } = tokenManager();
 	const token = getToken();

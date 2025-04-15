@@ -8,7 +8,7 @@ import HeaderContext from '@/commons/components/Header/HeaderContext'
 const LoginPage = () => {
   const { setTitle } = useContext(HeaderContext)
   const { control, handleSubmit } = useForm()
-  const { isAuthenticated, loginGoogle, loginPassword } = useAuth()
+  const { isAuthenticated, loginGoogle, loginPassword, checkPermission } = useAuth()
   const { state } = useLocation()
   const navigate = useNavigate()
 
@@ -18,7 +18,12 @@ const LoginPage = () => {
   }
   useEffect(() => setTitle("Login Page"));
   if (isAuthenticated) {
-    return <Navigate to="/" />
+    // Check if user has the permission "SavePilihProdi"
+    if (checkPermission("SavePilihProdi")) {
+      return <Navigate to="/pilihprodi" />
+    } else {
+      return <Navigate to="/" />
+    }
   }
 
   return (
