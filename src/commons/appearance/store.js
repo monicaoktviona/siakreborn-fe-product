@@ -5,7 +5,7 @@ const useAppearanceStore = create(
   persist(
     (set, get) => ({
       interfaceKit: "donor",
-      colorTheme: "pacific",
+      colorTheme: "forest",
       setAppearance: (appearance) => set(appearance),
       setInterfaceKit: (kit) => set({ ...get(), interfaceKit: kit }),
       setColorTheme: (theme) => set({ ...get(), colorTheme: theme }),
