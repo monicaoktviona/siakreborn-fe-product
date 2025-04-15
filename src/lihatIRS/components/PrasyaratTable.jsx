@@ -23,7 +23,7 @@ const PrasyaratTable = ({ dataBindingPengecekanPrasyaratMataKuliahDataList,
   
   return (
   <>
-    <Layouts.ListComponentTableLayout
+    <Layouts.PengecekanPrasyaratListComponentLayout
   	  items={[dataBindingPengecekanPrasyaratMataKuliahDataList]}
   	  itemsAttrs={[
           {
