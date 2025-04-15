@@ -58,7 +58,7 @@ const FormUbahMataKuliahPrasyarat = ({
       ...cleanData,
     })
     .then(({ data: { data } }) => {
-     navigate(`/matakuliah/${mataKuliahPrasyaratUbah.parentMataKuliahId}/prasyarat${mataKuliahPrasyaratUbah.id}`)
+     navigate(`/matakuliah/${mataKuliahPrasyaratUbah.parentMataKuliahId}/prasyarat/${mataKuliahPrasyaratUbah.id}`)
   	notifySuccess(`Update MataKuliahPrasyarat berhasil!`);
     })
     .catch((error) => {
